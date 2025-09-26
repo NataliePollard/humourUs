@@ -8,9 +8,9 @@ export const originalVideos = [
     likes: 847,
     saves: 234,
     comments: [
-      { user: "artlover23", text: "This is absolutely mesmerizing! 😍" },
-      { user: "digitalfan", text: "The way the colors blend is incredible" },
-      { user: "creativeworld", text: "So innovative! More please 🙌" }
+      { user: "artlover23", text: "This is absolutely mesmerizing! 😍", profilePic: "🎭", daysAgo: 2, likes: 47 },
+      { user: "digitalfan", text: "The way the colors blend is incredible", profilePic: "🌈", daysAgo: 3, likes: 23 },
+      { user: "creativeworld", text: "So innovative! More please 🙌", profilePic: "✨", daysAgo: 1, likes: 89 }
     ]
   },
   {
@@ -22,12 +22,12 @@ export const originalVideos = [
     likes: 623,
     saves: 189,
     comments: [
-      { user: "oceandreams", text: "The fluidity is so calming 💙" },
-      { user: "artcritic_", text: "Breathtaking composition!" },
-      { user: "bluevibes", text: "I could watch this for hours" },
-      { user: "contemporary_art", text: "This belongs in a gallery 🖼️" },
-      { user: "emotional_art", text: "Feeling all the emotions rn 😭✨" },
-      { user: "deepblue", text: "Water vibes are everything 🌊" }
+      { user: "oceandreams", text: "The fluidity is so calming 💙", profilePic: "🐚", daysAgo: 4, likes: 72 },
+      { user: "artcritic_", text: "Breathtaking composition!", profilePic: "👁️", daysAgo: 2, likes: 95 },
+      { user: "bluevibes", text: "I could watch this for hours", profilePic: "💙", daysAgo: 1, likes: 38 },
+      { user: "contemporary_art", text: "This belongs in a gallery 🖼️", profilePic: "🏛️", daysAgo: 3, likes: 67 },
+      { user: "emotional_art", text: "Feeling all the emotions rn 😭✨", profilePic: "💫", daysAgo: 5, likes: 14 },
+      { user: "deepblue", text: "Water vibes are everything 🌊", profilePic: "🌀", daysAgo: 2, likes: 81 }
     ]
   },
   {
@@ -39,7 +39,11 @@ export const originalVideos = [
     likes: 392,
     saves: 156,
     comments: [
-      { user: "naturelover", text: "The organic movement is perfect 🌿" }
+      { user: "naturelover", text: "The organic movement is perfect 🌿", profilePic: "🍃", daysAgo: 3, likes: 56 },
+      { user: "ecotechie", text: "This is how nature and tech should merge!", profilePic: "🌱", daysAgo: 4, likes: 29 },
+      { user: "biomimic", text: "Biomimicry at its finest", profilePic: "🦋", daysAgo: 1, likes: 43 },
+      { user: "greenthumb", text: "Getting major forest vibes 🌲", profilePic: "🌳", daysAgo: 2, likes: 18 },
+      { user: "organicart", text: "Nature is the best artist", profilePic: "🌺", daysAgo: 5, likes: 91 }
     ]
   },
   {
@@ -51,13 +55,13 @@ export const originalVideos = [
     likes: 756,
     saves: 298,
     comments: [
-      { user: "streetart_fan", text: "Bringing the streets to digital! 🔥" },
-      { user: "urbanvibes", text: "This hits different 💯" },
-      { user: "graffiti_king", text: "Respect for the digital evolution" },
-      { user: "cityart", text: "Love the urban energy ⚡" },
-      { user: "wallart_", text: "Traditional meets future perfectly" },
-      { user: "streetculture", text: "This is the evolution we needed" },
-      { user: "digitalstreet", text: "Pure fire content 🔥🔥" }
+      { user: "streetart_fan", text: "Bringing the streets to digital! 🔥", profilePic: "🎨", daysAgo: 1, likes: 88 },
+      { user: "urbanvibes", text: "This hits different 💯", profilePic: "🏙️", daysAgo: 3, likes: 52 },
+      { user: "graffiti_king", text: "Respect for the digital evolution", profilePic: "👑", daysAgo: 2, likes: 74 },
+      { user: "cityart", text: "Love the urban energy ⚡", profilePic: "⚡", daysAgo: 4, likes: 31 },
+      { user: "wallart_", text: "Traditional meets future perfectly", profilePic: "🧱", daysAgo: 5, likes: 65 },
+      { user: "streetculture", text: "This is the evolution we needed", profilePic: "🌃", daysAgo: 2, likes: 97 },
+      { user: "digitalstreet", text: "Pure fire content 🔥🔥", profilePic: "🔥", daysAgo: 1, likes: 0 }
     ]
   },
   {
@@ -69,10 +73,13 @@ export const originalVideos = [
     likes: 934,
     saves: 412,
     comments: [
-      { user: "neonlights", text: "80s vibes but make it futuristic ✨" },
-      { user: "synthwave_", text: "This is my aesthetic 💜" },
-      { user: "retro_future", text: "Nostalgic and innovative at once" },
-      { user: "neon_dreams", text: "Living for these colors!" }
+      { user: "neonlights", text: "80s vibes but make it futuristic ✨", profilePic: "💡", daysAgo: 2, likes: 83 },
+      { user: "synthwave_", text: "This is my aesthetic 💜", profilePic: "💜", daysAgo: 4, likes: 76 },
+      { user: "retro_future", text: "Nostalgic and innovative at once", profilePic: "🕶️", daysAgo: 1, likes: 45 },
+      { user: "neon_dreams", text: "Living for these colors!", profilePic: "🌈", daysAgo: 3, likes: 92 },
+      { user: "cyber_vibes", text: "This takes me back to the future", profilePic: "🤖", daysAgo: 5, likes: 27 },
+      { user: "vaporwave80", text: "Perfect synthwave aesthetic 🌊", profilePic: "🌊", daysAgo: 2, likes: 59 },
+      { user: "retrogamer", text: "Giving me serious outrun vibes", profilePic: "🎮", daysAgo: 1, likes: 34 }
     ]
   }
 ];
