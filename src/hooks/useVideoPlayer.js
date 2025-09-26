@@ -44,7 +44,7 @@ export const useVideoPlayer = (videos) => {
         }
       }
     });
-  }, [currentIndex, isPaused, hasStarted, videos.length]); // Include all dependencies
+  }, [currentIndex, hasStarted, videos.length]); // Remove isPaused from dependencies
 
   // Handle pause/resume without resetting position
   useEffect(() => {
@@ -64,8 +64,10 @@ export const useVideoPlayer = (videos) => {
   const togglePlayPause = async (index) => {
     const video = videoRefs.current[index];
     if (video) {
-      // Check if video is currently paused (either explicitly or hasn't started)
-      if (isPaused[index] || !hasStarted) {
+      // Check if video is currently paused or not playing
+      const isCurrentlyPaused = video.paused || isPaused[index];
+
+      if (isCurrentlyPaused) {
         // Resume/start playing (keep current position)
         try {
           await video.play();
