@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import videoCache from '../utils/videoCache';
 
 export const useVideoPlayer = (videos) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,6 +15,7 @@ export const useVideoPlayer = (videos) => {
   }, [videos.length]);
 
   // Handle video playback when currentIndex changes (scrolling)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     Object.keys(videoRefs.current).forEach(async (key) => {
       const video = videoRefs.current[key];
@@ -47,6 +47,7 @@ export const useVideoPlayer = (videos) => {
   }, [currentIndex, hasStarted, videos.length]); // Remove isPaused from dependencies
 
   // Handle pause/resume without resetting position
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const video = videoRefs.current[currentIndex];
     if (video && hasStarted) {
@@ -59,7 +60,7 @@ export const useVideoPlayer = (videos) => {
         });
       }
     }
-  }, [isPaused, currentIndex, hasStarted]);
+  }, [currentIndex, hasStarted, isPaused]);
 
   const togglePlayPause = async (index) => {
     const video = videoRefs.current[index];

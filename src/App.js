@@ -52,12 +52,14 @@ const TikTokApp = () => {
   }, []);
 
   // Update container position when currentIndex changes
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    if (containerRef.current && !isDragging) {
+    const container = containerRef.current;
+    if (container && !isDragging) {
       const originalVideosLength = originalVideos.length;
 
       // Check if we need to wrap (disable transition for wrapping)
-      const previousIndex = parseInt(containerRef.current.dataset.previousIndex) || currentIndex;
+      const previousIndex = parseInt(container.dataset.previousIndex) || currentIndex;
       const shouldDisableTransition =
         (currentIndex === videos.length - 1) ||
         (currentIndex === 0) ||
@@ -65,21 +67,21 @@ const TikTokApp = () => {
         (currentIndex === originalVideosLength * 2 - 1 && previousIndex === 0);
 
       if (shouldDisableTransition) {
-        containerRef.current.style.transition = 'none';
+        container.style.transition = 'none';
       } else {
-        containerRef.current.style.transition = 'transform 0.3s ease-out';
+        container.style.transition = 'transform 0.3s ease-out';
       }
 
       const offset = -currentIndex * 100;
-      containerRef.current.style.transform = `translateY(${offset}vh)`;
-      containerRef.current.dataset.currentIndex = currentIndex;
-      containerRef.current.dataset.previousIndex = currentIndex;
+      container.style.transform = `translateY(${offset}vh)`;
+      container.dataset.currentIndex = currentIndex;
+      container.dataset.previousIndex = currentIndex;
 
       // Re-enable transition after a brief delay for wrapping
       if (shouldDisableTransition) {
         setTimeout(() => {
-          if (containerRef.current) {
-            containerRef.current.style.transition = 'transform 0.3s ease-out';
+          if (container) {
+            container.style.transition = 'transform 0.3s ease-out';
           }
         }, 50);
       }
