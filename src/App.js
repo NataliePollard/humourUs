@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useVideoPlayer } from './hooks/useVideoPlayer';
 import { useGestureHandling } from './hooks/useGestureHandling';
 import { useVideoCaching } from './hooks/useVideoCaching';
+import { useSpeedControl } from './hooks/useSpeedControl';
 import VideoPlayer from './components/VideoPlayer';
 import VideoOverlay from './components/VideoOverlay';
 import VideoInfo from './components/VideoInfo';
@@ -43,6 +44,11 @@ const TikTokApp = () => {
   };
 
   const { isDragging, containerRef, handleStart, handleMove, handleEnd } = useGestureHandling(handleNavigation);
+
+  // Speed control for current video
+  const { handleSpeedStart, handleSpeedEnd } = useSpeedControl(
+    { current: videoRefs.current[currentIndex] }
+  );
 
   // Add viewport height fix for mobile
   useEffect(() => {
@@ -164,6 +170,8 @@ const TikTokApp = () => {
               onCanPlayThrough={handleVideoCanPlayThrough}
               onError={handleVideoError}
               getCachedVideoUrl={getCachedVideoUrl}
+              onSpeedStart={index === currentIndex ? handleSpeedStart : undefined}
+              onSpeedEnd={index === currentIndex ? handleSpeedEnd : undefined}
             />
 
             <VideoOverlay
