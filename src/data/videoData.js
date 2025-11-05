@@ -1,85 +1,147 @@
 export const originalVideos = [
   {
     id: 1,
-    videoSrc: "/videos/video1.mp4",
-    username: "abstractartist",
-    description: "exploring digital textures and movement ✨ #digitalart #experimental",
-    profilePic: "🎨",
-    likes: 847,
-    saves: 234,
+    videoSrc: "/videos/Cole - Elixir.mp4",
+    username: "cole",
+    description: "magical elixir brewing session ✨ #alchemy #potion",
+    profilePic: "🧙",
+    likes: 542,
+    saves: 187,
     comments: [
-      { user: "artlover23", text: "This is absolutely mesmerizing! 😍", profilePic: "🎭", daysAgo: 2, likes: 47 },
-      { user: "digitalfan", text: "The way the colors blend is incredible", profilePic: "🌈", daysAgo: 3, likes: 23 },
-      { user: "creativeworld", text: "So innovative! More please 🙌", profilePic: "✨", daysAgo: 1, likes: 89 }
+      { user: "potionlover", text: "The sparkles are mesmerizing! 💫", profilePic: "🌟", daysAgo: 2, likes: 34 },
+      { user: "magicfan", text: "Can I have the recipe?", profilePic: "✨", daysAgo: 3, likes: 19 },
+      { user: "alchemist_daily", text: "Love the technique! 🔮", profilePic: "🔮", daysAgo: 1, likes: 56 }
     ]
   },
   {
     id: 2,
-    videoSrc: "/videos/video2.mp4",
-    username: "visualpoetry",
-    description: "when colors collide with emotion 🌊 #contemporary #artinstallation",
-    profilePic: "🌊",
-    likes: 623,
-    saves: 189,
+    videoSrc: "/videos/Cole Hammer Swing_2.mp4",
+    username: "cole",
+    description: "perfect hammer swing technique 💪 #craftsman #metalwork",
+    profilePic: "🧙",
+    likes: 678,
+    saves: 245,
     comments: [
-      { user: "oceandreams", text: "The fluidity is so calming 💙", profilePic: "🐚", daysAgo: 4, likes: 72 },
-      { user: "artcritic_", text: "Breathtaking composition!", profilePic: "👁️", daysAgo: 2, likes: 95 },
-      { user: "bluevibes", text: "I could watch this for hours", profilePic: "💙", daysAgo: 1, likes: 38 },
-      { user: "contemporary_art", text: "This belongs in a gallery 🖼️", profilePic: "🏛️", daysAgo: 3, likes: 67 },
-      { user: "emotional_art", text: "Feeling all the emotions rn 😭✨", profilePic: "💫", daysAgo: 5, likes: 14 },
-      { user: "deepblue", text: "Water vibes are everything 🌊", profilePic: "🌀", daysAgo: 2, likes: 81 }
+      { user: "toolmaster", text: "That form is pristine! 🔨", profilePic: "🛠️", daysAgo: 1, likes: 82 },
+      { user: "craftpride", text: "Years of practice right there", profilePic: "👷", daysAgo: 2, likes: 61 },
+      { user: "ironworker", text: "Satisfying to watch 😍", profilePic: "⚙️", daysAgo: 3, likes: 71 },
+      { user: "metalheads", text: "Best hammer videos on the platform", profilePic: "🔩", daysAgo: 2, likes: 45 }
     ]
   },
   {
     id: 3,
-    videoSrc: "/videos/video3.mp4",
-    username: "motionmaker",
-    description: "nature meets technology in this piece 🌿 #bioart #newmedia",
-    profilePic: "🌱",
-    likes: 392,
-    saves: 156,
+    videoSrc: "/videos/Protein Powder.mp4",
+    username: "cole",
+    description: "top protein powder brands reviewed 💪 #fitness #supplements",
+    profilePic: "🧙",
+    likes: 567,
+    saves: 198,
     comments: [
-      { user: "naturelover", text: "The organic movement is perfect 🌿", profilePic: "🍃", daysAgo: 3, likes: 56 },
-      { user: "ecotechie", text: "This is how nature and tech should merge!", profilePic: "🌱", daysAgo: 4, likes: 29 },
-      { user: "biomimic", text: "Biomimicry at its finest", profilePic: "🦋", daysAgo: 1, likes: 43 },
-      { user: "greenthumb", text: "Getting major forest vibes 🌲", profilePic: "🌳", daysAgo: 2, likes: 18 },
-      { user: "organicart", text: "Nature is the best artist", profilePic: "🌺", daysAgo: 5, likes: 91 }
+      { user: "gym_bro", text: "Finally someone comparing them fairly!", profilePic: "💪", daysAgo: 1, likes: 76 },
+      { user: "fitness_guru", text: "This is super helpful for my training", profilePic: "🏋️", daysAgo: 2, likes: 54 },
+      { user: "nutrition_nerd", text: "Love your detailed analysis", profilePic: "📊", daysAgo: 2, likes: 43 }
     ]
   },
   {
     id: 4,
-    videoSrc: "/videos/video4.mp4",
-    username: "urbancanvas",
-    description: "street art reimagined for the digital age 🎨 #streetart #digital",
-    profilePic: "🏙️",
-    likes: 756,
-    saves: 298,
+    videoSrc: "/videos/Sang Vampire.mp4",
+    username: "sang",
+    description: "vampiric poetry and dark aesthetics 🦇 #goth #literature",
+    profilePic: "🦇",
+    likes: 823,
+    saves: 312,
     comments: [
-      { user: "streetart_fan", text: "Bringing the streets to digital! 🔥", profilePic: "🎨", daysAgo: 1, likes: 88 },
-      { user: "urbanvibes", text: "This hits different 💯", profilePic: "🏙️", daysAgo: 3, likes: 52 },
-      { user: "graffiti_king", text: "Respect for the digital evolution", profilePic: "👑", daysAgo: 2, likes: 74 },
-      { user: "cityart", text: "Love the urban energy ⚡", profilePic: "⚡", daysAgo: 4, likes: 31 },
-      { user: "wallart_", text: "Traditional meets future perfectly", profilePic: "🧱", daysAgo: 5, likes: 65 },
-      { user: "streetculture", text: "This is the evolution we needed", profilePic: "🌃", daysAgo: 2, likes: 97 },
-      { user: "digitalstreet", text: "Pure fire content 🔥🔥", profilePic: "🔥", daysAgo: 1, likes: 0 }
+      { user: "darkpoet", text: "This gave me chills! 😱", profilePic: "🌙", daysAgo: 2, likes: 73 },
+      { user: "gothicvibes", text: "Absolutely haunting", profilePic: "🖤", daysAgo: 1, likes: 98 },
+      { user: "nocturnal_fan", text: "The atmosphere is incredible 🖤", profilePic: "🌑", daysAgo: 3, likes: 52 },
+      { user: "literature_buff", text: "More vampire content please!", profilePic: "📚", daysAgo: 2, likes: 67 }
     ]
   },
   {
     id: 5,
-    videoSrc: "/videos/video5.mp4",
-    username: "synthwavelab",
-    description: "nostalgic futures and neon dreams 💜 #synthwave #retroart",
-    profilePic: "🌆",
-    likes: 934,
-    saves: 412,
+    videoSrc: "/videos/Raver Girl Bath Blood.mp4",
+    username: "sang",
+    description: "lost in the rave scene 💊 #techno #underground",
+    profilePic: "🦇",
+    likes: 456,
+    saves: 167,
     comments: [
-      { user: "neonlights", text: "80s vibes but make it futuristic ✨", profilePic: "💡", daysAgo: 2, likes: 83 },
-      { user: "synthwave_", text: "This is my aesthetic 💜", profilePic: "💜", daysAgo: 4, likes: 76 },
-      { user: "retro_future", text: "Nostalgic and innovative at once", profilePic: "🕶️", daysAgo: 1, likes: 45 },
-      { user: "neon_dreams", text: "Living for these colors!", profilePic: "🌈", daysAgo: 3, likes: 92 },
-      { user: "cyber_vibes", text: "This takes me back to the future", profilePic: "🤖", daysAgo: 5, likes: 27 },
-      { user: "vaporwave80", text: "Perfect synthwave aesthetic 🌊", profilePic: "🌊", daysAgo: 2, likes: 59 },
-      { user: "retrogamer", text: "Giving me serious outrun vibes", profilePic: "🎮", daysAgo: 1, likes: 34 }
+      { user: "raver_life", text: "This is so trippy! 🌀", profilePic: "🎶", daysAgo: 1, likes: 89 },
+      { user: "edm_fan", text: "The production quality is incredible", profilePic: "🎧", daysAgo: 2, likes: 71 },
+      { user: "underground_vibe", text: "Pure artistry right here", profilePic: "🌌", daysAgo: 1, likes: 64 }
+    ]
+  },
+  {
+    id: 6,
+    videoSrc: "/videos/Mel Conspiracy Rant.mp4",
+    username: "mel",
+    description: "unraveling the truth about everything 🕵️ #conspiracy #exposed",
+    profilePic: "🔍",
+    likes: 934,
+    saves: 401,
+    comments: [
+      { user: "truthseeker", text: "Finally someone saying what we're all thinking!", profilePic: "🤔", daysAgo: 1, likes: 145 },
+      { user: "awakened", text: "This makes so much sense 🤯", profilePic: "💡", daysAgo: 2, likes: 89 },
+      { user: "investigator", text: "The evidence is compelling", profilePic: "📋", daysAgo: 1, likes: 76 },
+      { user: "critical_thinker", text: "Best analysis I've seen", profilePic: "🧠", daysAgo: 3, likes: 102 },
+      { user: "documentary_fan", text: "Needs way more views!", profilePic: "🎬", daysAgo: 2, likes: 58 }
+    ]
+  },
+  {
+    id: 7,
+    videoSrc: "/videos/Mel Wonder Tour Colored.mp4",
+    username: "mel",
+    description: "the wonder tour in full color 🎨 #travel #art #inspiration",
+    profilePic: "🔍",
+    likes: 712,
+    saves: 289,
+    comments: [
+      { user: "art_lover", text: "The colors are absolutely stunning! 🌈", profilePic: "🎨", daysAgo: 1, likes: 98 },
+      { user: "travel_bug", text: "Adding this to my bucket list immediately", profilePic: "✈️", daysAgo: 2, likes: 82 },
+      { user: "visuals_addict", text: "Cinematic masterpiece", profilePic: "🎬", daysAgo: 1, likes: 73 }
+    ]
+  },
+  {
+    id: 8,
+    videoSrc: "/videos/Lord Brayn Rumors.mp4",
+    username: "mel",
+    description: "separating fact from fiction about lord brayn 👑 #gossip #celeb",
+    profilePic: "🔍",
+    likes: 645,
+    saves: 234,
+    comments: [
+      { user: "celeb_insider", text: "I heard the same thing! 👀", profilePic: "📱", daysAgo: 1, likes: 67 },
+      { user: "gossip_queen", text: "Finally someone addresses this!", profilePic: "👑", daysAgo: 2, likes: 89 },
+      { user: "rumor_mill", text: "Which one is actually true though?", profilePic: "🤷", daysAgo: 1, likes: 54 }
+    ]
+  },
+  {
+    id: 9,
+    videoSrc: "/videos/Flem Diagram.mp4",
+    username: "flem",
+    description: "breaking down complex diagrams made simple 📊 #education #howto",
+    profilePic: "🧘",
+    likes: 523,
+    saves: 201,
+    comments: [
+      { user: "student_life", text: "This finally makes sense! 💡", profilePic: "📚", daysAgo: 1, likes: 76 },
+      { user: "teacher_approved", text: "Showing this to my class", profilePic: "👨‍🏫", daysAgo: 2, likes: 82 },
+      { user: "visual_learner", text: "Perfect explanation style", profilePic: "👀", daysAgo: 1, likes: 59 }
+    ]
+  },
+  {
+    id: 10,
+    videoSrc: "/videos/Flem Vials-.mp4",
+    username: "flem",
+    description: "mysterious vials collection and their uses ✨ #alchemy #collection",
+    profilePic: "🧘",
+    likes: 678,
+    saves: 234,
+    comments: [
+      { user: "collector_life", text: "Where can I get these?! 🧪", profilePic: "🧬", daysAgo: 2, likes: 61 },
+      { user: "apothecary_fan", text: "Love the aesthetic 💜", profilePic: "🍄", daysAgo: 1, likes: 87 },
+      { user: "vintage_collector", text: "Your collection is amazing!", profilePic: "🎁", daysAgo: 3, likes: 54 },
+      { user: "crafts_diy", text: "Inspiring display!", profilePic: "🎨", daysAgo: 2, likes: 42 }
     ]
   }
 ];
