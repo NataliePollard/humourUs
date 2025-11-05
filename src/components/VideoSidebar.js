@@ -7,9 +7,7 @@ const VideoSidebar = ({
   savedVideos,
   onLike,
   onSave,
-  onShowComments,
-  showCaptions,
-  onToggleCaptions
+  onShowComments
 }) => {
   return (
     <div className="absolute right-4 bottom-28 flex flex-col items-center space-y-6">
@@ -82,31 +80,6 @@ const VideoSidebar = ({
         <span className="text-white text-xs mt-1">
           {formatLikes(video.saves + (savedVideos[video.id] ? 1 : 0))}
         </span>
-      </div>
-
-      {/* Caption toggle button */}
-      <div className="flex flex-col items-center">
-        <button
-          onClick={onToggleCaptions}
-          className={`w-12 h-12 flex items-center justify-center transition-all duration-200 ${
-            showCaptions ? 'opacity-100' : 'opacity-60'
-          }`}
-          title={showCaptions ? 'Hide captions' : 'Show captions'}
-        >
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={showCaptions ? "#00D9FF" : "white"}
-            strokeWidth="2"
-          >
-            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-            <line x1="7" y1="15" x2="17" y2="15"></line>
-            <line x1="9" y1="11" x2="15" y2="11"></line>
-          </svg>
-        </button>
-        <span className="text-white text-xs mt-1">CC</span>
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { captionData } from '../data/captionData';
 
-const CaptionDisplay = ({ currentTime, videoId, showCaptions }) => {
+const CaptionDisplay = ({ currentTime, videoId }) => {
   // Find captions for this video
   const videoCaption = useMemo(() => {
     const captionObj = captionData.find(c => c.videoId === videoId);
-    if (!captionObj || !showCaptions) return null;
+    if (!captionObj) return null;
 
     // Find the caption that matches the current time
     const currentCaption = captionObj.captions.find(
@@ -13,7 +13,7 @@ const CaptionDisplay = ({ currentTime, videoId, showCaptions }) => {
     );
 
     return currentCaption;
-  }, [videoId, currentTime, showCaptions]);
+  }, [videoId, currentTime]);
 
   if (!videoCaption) return null;
 

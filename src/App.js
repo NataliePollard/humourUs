@@ -17,7 +17,6 @@ const TikTokApp = () => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
-  const [showCaptions, setShowCaptions] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
 
   // Create infinite loop by tripling the videos
@@ -135,10 +134,6 @@ const TikTokApp = () => {
     console.warn('Video load error:', e);
   };
 
-  const handleToggleCaptions = () => {
-    setShowCaptions(prev => !prev);
-  };
-
   return (
     <div className="h-screen w-full overflow-hidden bg-black relative">
       {/* Small cache progress indicator */}
@@ -198,7 +193,6 @@ const TikTokApp = () => {
               <CaptionDisplay
                 currentTime={currentTime}
                 videoId={video.id}
-                showCaptions={showCaptions}
               />
             )}
 
@@ -213,8 +207,6 @@ const TikTokApp = () => {
               onLike={handleLike}
               onSave={handleSave}
               onShowComments={() => setShowComments(true)}
-              showCaptions={showCaptions}
-              onToggleCaptions={handleToggleCaptions}
             />
           </div>
         ))}
