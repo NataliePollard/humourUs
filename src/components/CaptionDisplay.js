@@ -18,7 +18,7 @@ const CaptionDisplay = ({ currentTime, videoId }) => {
   if (!videoCaption) return null;
 
   return (
-    <div className="absolute bottom-24 left-0 right-0 px-4 pb-4 text-center pointer-events-none z-30">
+    <div className="absolute top-24 left-0 right-0 px-4 pt-4 text-center pointer-events-none z-30">
       <div className="bg-black bg-opacity-70 inline-block px-4 py-2 rounded max-w-full">
         <p className="text-white text-base sm:text-lg font-medium leading-snug">
           {videoCaption.text}
