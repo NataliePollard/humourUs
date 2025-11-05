@@ -153,20 +153,21 @@ export const captionData = [
     "videoId": 5,
     "captions": [
       {
-        "text": "300 gold pieces",
+        "text": "Raver girl bad blood!",
         "startTime": 0,
-        "endTime": 3.0
+        "endTime": 2
       },
       {
-        "text": "and all this positive energy is yours",
-        "startTime": 3.0,
-        "endTime": 7.5
+        "text": "Only 300 gold pieces and all this positive energy is yours",
+        "startTime": 2,
+        "endTime": 8
       },
       {
-        "text": "raver girl bad blood",
-        "startTime": 7.5,
-        "endTime": 12.14
-      }
+        "text": "Raver girl bath blood",
+        "startTime": 8,
+        "endTime": 10
+      },
+
     ]
   },
 ];
