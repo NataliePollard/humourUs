@@ -9,6 +9,7 @@ import VideoInfo from './components/VideoInfo';
 import VideoSidebar from './components/VideoSidebar';
 import ProgressBar from './components/ProgressBar';
 import CommentsModal from './components/CommentsModal';
+import CaptionDisplay from './components/CaptionDisplay';
 import { originalVideos } from './data/videoData';
 import { createInfiniteVideoArray, setViewportHeight, vibrate } from './utils/helpers';
 
@@ -16,6 +17,8 @@ const TikTokApp = () => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
+  const [showCaptions, setShowCaptions] = useState(true);
+  const [currentTime, setCurrentTime] = useState(0);
 
   // Create infinite loop by tripling the videos
   const videos = createInfiniteVideoArray(originalVideos);
@@ -132,6 +135,10 @@ const TikTokApp = () => {
     console.warn('Video load error:', e);
   };
 
+  const handleToggleCaptions = () => {
+    setShowCaptions(prev => !prev);
+  };
+
   return (
     <div className="h-screen w-full overflow-hidden bg-black relative">
       {/* Small cache progress indicator */}
@@ -165,7 +172,12 @@ const TikTokApp = () => {
               index={index}
               currentIndex={currentIndex}
               videoRef={(el) => videoRefs.current[index] = el}
-              onTimeUpdate={handleVideoProgress}
+              onTimeUpdate={(videoId, time, duration) => {
+                handleVideoProgress(videoId, time, duration);
+                if (index === currentIndex) {
+                  setCurrentTime(time);
+                }
+              }}
               onLoadStart={handleVideoLoadStart}
               onCanPlayThrough={handleVideoCanPlayThrough}
               onError={handleVideoError}
@@ -182,6 +194,14 @@ const TikTokApp = () => {
               onTogglePlay={togglePlayPause}
             />
 
+            {index === currentIndex && (
+              <CaptionDisplay
+                currentTime={currentTime}
+                videoId={video.id}
+                showCaptions={showCaptions}
+              />
+            )}
+
             <ProgressBar progress={videoProgress[video.id] || 0} />
 
             <VideoInfo video={video} />
@@ -193,6 +213,8 @@ const TikTokApp = () => {
               onLike={handleLike}
               onSave={handleSave}
               onShowComments={() => setShowComments(true)}
+              showCaptions={showCaptions}
+              onToggleCaptions={handleToggleCaptions}
             />
           </div>
         ))}
