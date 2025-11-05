@@ -153,39 +153,19 @@ export const captionData = [
     "videoId": 5,
     "captions": [
       {
-        "text": "Lost in the beat",
+        "text": "300 gold pieces",
         "startTime": 0,
         "endTime": 3.0
       },
       {
-        "text": "Lights flashing all around",
+        "text": "and all this positive energy is yours",
         "startTime": 3.0,
-        "endTime": 6.0
+        "endTime": 7.5
       },
       {
-        "text": "Moving to the rhythm",
-        "startTime": 6.0,
-        "endTime": 9.0
-      },
-      {
-        "text": "Feel the energy",
-        "startTime": 9.0,
-        "endTime": 12.0
-      },
-      {
-        "text": "Pure vibes tonight",
-        "startTime": 12.0,
-        "endTime": 15.0
-      },
-      {
-        "text": "Music takes over",
-        "startTime": 15.0,
-        "endTime": 18.0
-      },
-      {
-        "text": "Dancing in the dark",
-        "startTime": 18.0,
-        "endTime": 21.0
+        "text": "raver girl bad blood",
+        "startTime": 7.5,
+        "endTime": 12.14
       }
     ]
   },
