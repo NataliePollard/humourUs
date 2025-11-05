@@ -21,13 +21,12 @@ export const useVideoPlayer = (videos) => {
       const video = videoRefs.current[key];
       if (video) {
         if (parseInt(key) === currentIndex) {
-          video.pause();
           // Always reset to beginning when scrolling to a video
           video.currentTime = 0;
 
           // Only auto-play if not the first video (first video requires user interaction)
           const isFirstVideo = currentIndex === Math.floor(videos.length / 3); // Middle set start
-          if (!isPaused[currentIndex] && !isFirstVideo && hasStarted) {
+          if (!isFirstVideo && hasStarted) {
             try {
               await new Promise(resolve => setTimeout(resolve, 100));
               if (parseInt(key) === currentIndex) {
@@ -36,6 +35,9 @@ export const useVideoPlayer = (videos) => {
             } catch (error) {
               console.warn('Auto-play failed:', error);
             }
+          } else {
+            // For first video or when not started, pause it
+            video.pause();
           }
         } else {
           video.pause();

@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Video backups and processing files
+/public/videos-backup/
+/public/unprocessed-videos/
+*.ps1
+download-from-dropbox.py
