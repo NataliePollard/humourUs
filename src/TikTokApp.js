@@ -140,7 +140,7 @@ const TikTokApp = ({ creator = null }) => {
   };
 
   return (
-    <div className="h-screen w-full overflow-hidden bg-black relative">
+    <div className="w-full overflow-hidden bg-black relative" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       {/* Small cache progress indicator */}
       {cacheProgress < 100 && cacheProgress > 0 && (
         <div className="absolute top-4 right-4 z-50 bg-black bg-opacity-70 rounded-full p-2 text-white text-xs">
@@ -159,7 +159,7 @@ const TikTokApp = ({ creator = null }) => {
         onMouseMove={handleMove}
         onMouseUp={handleEnd}
         onMouseLeave={handleEnd}
-        style={{ transform: `translateY(-${currentIndex * 100}vh)` }}
+        style={{ transform: `translateY(-${currentIndex * 100}vh)`, height: '100%' }}
       >
         {videos.map((video, index) => (
           <div
