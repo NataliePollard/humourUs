@@ -2,7 +2,7 @@ export const originalVideos = [
   {
     id: 1,
     videoSrc: "/videos/Cole - Elixir.mp4",
-    username: "cole",
+    username: "col",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 542,
@@ -16,7 +16,7 @@ export const originalVideos = [
   {
     id: 2,
     videoSrc: "/videos/Cole Hammer Swing_2.mp4",
-    username: "cole",
+    username: "col",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 678,
@@ -31,7 +31,7 @@ export const originalVideos = [
   {
     id: 3,
     videoSrc: "/videos/Protein Powder.mp4",
-    username: "cole",
+    username: "col",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 567,
