@@ -118,13 +118,9 @@ const TikTokApp = ({ creator = null }) => {
   };
 
   const handleVideoLoadStart = (index) => {
-    // Only pause if this is not the current video
-    // Current video should be allowed to play naturally
-    if (index !== currentIndex) {
-      const videoEl = videoRefs.current[index];
-      if (videoEl) {
-        videoEl.pause();
-      }
+    const videoEl = videoRefs.current[index];
+    if (videoEl) {
+      videoEl.pause();
     }
   };
 

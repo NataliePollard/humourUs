@@ -44,12 +44,11 @@ export const useVideoPlayer = (videos) => {
     });
   }, [currentIndex, hasStarted, isPaused, videos.length]);
 
-  // Handle pause/resume for current video when pause state changes
+  // Handle pause/resume without resetting position
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const video = videoRefs.current[currentIndex];
-    if (video && hasStarted && currentIndex !== Math.floor(videos.length / 3)) {
-      // Only handle pause/resume for non-first videos
+    if (video && hasStarted) {
       if (isPaused[currentIndex]) {
         video.pause();
       } else {
@@ -59,7 +58,7 @@ export const useVideoPlayer = (videos) => {
         });
       }
     }
-  }, [isPaused[currentIndex], hasStarted, currentIndex, videos.length]);
+  }, [currentIndex, hasStarted, isPaused]);
 
   const togglePlayPause = async (index) => {
     const video = videoRefs.current[index];
