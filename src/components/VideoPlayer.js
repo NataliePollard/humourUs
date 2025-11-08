@@ -19,7 +19,6 @@ const VideoPlayer = ({
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         src={getCachedVideoUrl(video.videoSrc)}
-        loop
         playsInline
         preload="auto"
         muted
