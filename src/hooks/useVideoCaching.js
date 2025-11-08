@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import videoCache from '../utils/videoCache';
 
-export const useVideoCaching = (videos) => {
+export const useVideoCaching = (videos, creator = null) => {
   const [cacheProgress, setCacheProgress] = useState(0);
   const [cachedVideoCount, setCachedVideoCount] = useState(0);
 
   useEffect(() => {
     const initializeCache = async () => {
-      await videoCache.init();
+      await videoCache.init(creator);
 
       videoCache.setProgressCallback(({ overallProgress, completedVideos }) => {
         setCacheProgress(overallProgress);
@@ -29,7 +29,7 @@ export const useVideoCaching = (videos) => {
     return () => {
       videoCache.cleanup();
     };
-  }, [videos]);
+  }, [videos, creator]);
 
   return {
     cacheProgress,
