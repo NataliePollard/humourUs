@@ -24,13 +24,12 @@ export const useVideoPlayer = (videos) => {
           // Always reset to beginning when scrolling to a video
           video.currentTime = 0;
 
-          // Only auto-play if not the first video (first video requires user interaction)
-          const isFirstVideo = currentIndex === Math.floor(videos.length / 3); // Middle set start
-          if (!isFirstVideo && hasStarted && !isPaused[currentIndex]) {
-            // Try to play immediately without await/timeout to keep the gesture chain
-            video.play().catch(error => {
-              console.warn('Auto-play failed:', error);
-            });
+          // For non-first videos after user has started, let them play
+          // With muted attribute, iOS allows auto-play
+          const isFirstVideo = currentIndex === Math.floor(videos.length / 3);
+          if (!isFirstVideo && hasStarted) {
+            // Just let the video play naturally with loop attribute
+            // Don't force play() - let browser handle it with muted + loop
           } else {
             // For first video or when not started, pause it
             video.pause();
@@ -42,7 +41,7 @@ export const useVideoPlayer = (videos) => {
         }
       }
     });
-  }, [currentIndex, hasStarted, isPaused, videos.length]);
+  }, [currentIndex, hasStarted, videos.length]);
 
   // Handle pause/resume without resetting position
   // eslint-disable-next-line react-hooks/exhaustive-deps

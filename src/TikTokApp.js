@@ -125,9 +125,18 @@ const TikTokApp = ({ creator = null }) => {
   };
 
   const handleVideoCanPlayThrough = (index) => {
-    // This callback is called when video has buffered enough to play through
-    // We rely on useVideoPlayer.js to handle the actual auto-play logic
-    // via the useEffect that watches currentIndex and hasStarted
+    // Auto-play muted videos when they're ready (iOS allows muted autoplay)
+    if (index === currentIndex && hasStarted) {
+      const isFirstVideo = currentIndex === Math.floor(videos.length / 3);
+      if (!isFirstVideo) {
+        const videoEl = videoRefs.current[index];
+        if (videoEl && !isPaused[currentIndex]) {
+          videoEl.play().catch(err => {
+            // Muted autoplay might still fail on some devices, ignore
+          });
+        }
+      }
+    }
   };
 
   const handleVideoError = (e) => {
