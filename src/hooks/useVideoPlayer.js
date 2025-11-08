@@ -17,7 +17,7 @@ export const useVideoPlayer = (videos) => {
   // Handle video playback when currentIndex changes (scrolling)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    Object.keys(videoRefs.current).forEach(async (key) => {
+    Object.keys(videoRefs.current).forEach((key) => {
       const video = videoRefs.current[key];
       if (video) {
         if (parseInt(key) === currentIndex) {
@@ -26,15 +26,11 @@ export const useVideoPlayer = (videos) => {
 
           // Only auto-play if not the first video (first video requires user interaction)
           const isFirstVideo = currentIndex === Math.floor(videos.length / 3); // Middle set start
-          if (!isFirstVideo && hasStarted) {
-            try {
-              await new Promise(resolve => setTimeout(resolve, 100));
-              if (parseInt(key) === currentIndex) {
-                await video.play();
-              }
-            } catch (error) {
+          if (!isFirstVideo && hasStarted && !isPaused[currentIndex]) {
+            // Try to play immediately without await/timeout to keep the gesture chain
+            video.play().catch(error => {
               console.warn('Auto-play failed:', error);
-            }
+            });
           } else {
             // For first video or when not started, pause it
             video.pause();
@@ -46,7 +42,7 @@ export const useVideoPlayer = (videos) => {
         }
       }
     });
-  }, [currentIndex, hasStarted, videos.length]); // Remove isPaused from dependencies
+  }, [currentIndex, hasStarted, isPaused, videos.length]);
 
   // Handle pause/resume without resetting position
   // eslint-disable-next-line react-hooks/exhaustive-deps
