@@ -6,14 +6,11 @@ class VideoCache {
     this.loadingPromises = new Map();
     this.loadingProgress = {};
     this.onProgressUpdate = null;
-    this.currentCreator = null; // Track which creator's videos are cached
   }
 
-  async init(creator = null) {
-    this.currentCreator = creator;
-    const cacheName = creator ? `tiktok-videos-${creator}` : 'tiktok-art-videos-all';
+  async init() {
     try {
-      this.cache = await caches.open(cacheName);
+      this.cache = await caches.open('tiktok-art-videos-v1');
       return true;
     } catch (error) {
       console.warn('Cache API not supported, falling back to memory cache:', error);
