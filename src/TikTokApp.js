@@ -9,7 +9,6 @@ import VideoInfo from './components/VideoInfo';
 import VideoSidebar from './components/VideoSidebar';
 import ProgressBar from './components/ProgressBar';
 import CommentsModal from './components/CommentsModal';
-import CaptionDisplay from './components/CaptionDisplay';
 import { originalVideos } from './data/videoData';
 import { createInfiniteVideoArray, setViewportHeight, vibrate } from './utils/helpers';
 
@@ -17,7 +16,6 @@ const TikTokApp = ({ creator = null }) => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
-  const [currentTime, setCurrentTime] = useState(0);
 
   // Filter videos by creator if specified
   const filteredVideos = creator
@@ -174,9 +172,6 @@ const TikTokApp = ({ creator = null }) => {
               videoRef={(el) => videoRefs.current[index] = el}
               onTimeUpdate={(videoId, time, duration) => {
                 handleVideoProgress(videoId, time, duration);
-                if (index === currentIndex) {
-                  setCurrentTime(time);
-                }
               }}
               onLoadStart={handleVideoLoadStart}
               onCanPlayThrough={handleVideoCanPlayThrough}
@@ -193,13 +188,6 @@ const TikTokApp = ({ creator = null }) => {
               currentIndex={currentIndex}
               onTogglePlay={togglePlayPause}
             />
-
-            {index === currentIndex && (
-              <CaptionDisplay
-                currentTime={currentTime}
-                videoId={video.id}
-              />
-            )}
 
             <ProgressBar progress={videoProgress[video.id] || 0} />
 
