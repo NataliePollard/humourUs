@@ -118,17 +118,23 @@ const TikTokApp = ({ creator = null }) => {
   };
 
   const handleVideoLoadStart = (index) => {
-    const videoEl = videoRefs.current[index];
-    if (videoEl) {
-      videoEl.pause();
-    }
+    // Don't pause here - let videos load naturally
+    // The isPaused state will be managed by navigation and play/pause handlers
   };
 
   const handleVideoCanPlayThrough = (index) => {
-    if (index === currentIndex && !isPaused[currentIndex] && hasStarted) {
-      const videoEl = videoRefs.current[index];
-      if (videoEl) {
-        videoEl.play().catch(err => console.warn('Auto-play failed:', err));
+    // Auto-play when video is ready to play through (buffered enough)
+    // Only on non-first videos after user has started
+    if (index === currentIndex && hasStarted) {
+      const isFirstVideo = currentIndex === Math.floor(videos.length / 3);
+      if (!isFirstVideo) {
+        const videoEl = videoRefs.current[index];
+        if (videoEl) {
+          // Check if we should play (not explicitly paused by user)
+          if (!isPaused[currentIndex]) {
+            videoEl.play().catch(err => console.warn('Auto-play failed:', err));
+          }
+        }
       }
     }
   };
