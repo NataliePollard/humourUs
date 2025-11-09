@@ -6,7 +6,6 @@ export const useVideoCaching = () => {
   const [cachedVideos, setCachedVideos] = useState({});
   const blobUrlsRef = useRef([]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // Pre-cache all videos on app load
     const cacheAllVideos = async () => {
@@ -40,6 +39,7 @@ export const useVideoCaching = () => {
     cacheAllVideos();
 
     // Cleanup blob URLs on unmount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => {
       blobUrlsRef.current.forEach(blobUrl => {
         URL.revokeObjectURL(blobUrl);
