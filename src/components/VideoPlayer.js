@@ -24,6 +24,7 @@ const VideoPlayer = ({
         playsInline
         preload="none"
         muted={isMuted}
+        loop
         onTimeUpdate={(e) => onTimeUpdate(video.id, e.target.currentTime, e.target.duration)}
         onLoadStart={() => onLoadStart(index)}
         onCanPlayThrough={() => onCanPlayThrough(index)}
