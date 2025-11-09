@@ -22,10 +22,10 @@ const VideoPlayer = ({
         loop
         onTimeUpdate={(e) => onTimeUpdate(video.id, e.target.currentTime, e.target.duration)}
       />
-      {/* 2x Speed Control Area - Right side above heart */}
+      {/* 2x Speed Control Area - Right side upper portion */}
       {onSpeedStart && onSpeedEnd && (
         <div
-          className="absolute right-0 top-0 bottom-1/3 w-20 z-40 cursor-pointer"
+          className="absolute right-0 top-0 h-1/2 w-20 z-40 cursor-pointer"
           onTouchStart={onSpeedStart}
           onTouchEnd={onSpeedEnd}
           onTouchCancel={onSpeedEnd}
@@ -43,9 +43,9 @@ const VideoPlayer = ({
           aria-label={isMuted ? 'Unmute' : 'Mute'}
         >
           {isMuted ? (
-            <img src="/icons/mute.png" alt="Mute" className="w-10 h-10" />
+            <img src="/icons/mute.png" alt="Mute" className="w-16 h-16" />
           ) : (
-            <img src="/icons/sound.png" alt="Sound" className="w-10 h-10" />
+            <img src="/icons/sound.png" alt="Sound" className="w-16 h-16" />
           )}
         </button>
       )}
