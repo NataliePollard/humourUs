@@ -411,5 +411,47 @@ export const originalVideos = [
       { user: "user3", text: "Comment placeholder", profilePic: "🌑", daysAgo: 3, likes: 72 },
       { user: "user4", text: "Comment placeholder", profilePic: "🦇", daysAgo: 2, likes: 59 }
     ]
+  },
+  {
+    id: 30,
+    videoSrc: "/videos/Col Death Consipracy Real_1.mp4",
+    username: "col",
+    description: "Description placeholder",
+    profilePic: "🧙",
+    likes: 567,
+    saves: 201,
+    comments: [
+      { user: "user1", text: "Comment placeholder", profilePic: "🔍", daysAgo: 1, likes: 78 },
+      { user: "user2", text: "Comment placeholder", profilePic: "👀", daysAgo: 2, likes: 65 },
+      { user: "user3", text: "Comment placeholder", profilePic: "💭", daysAgo: 2, likes: 52 }
+    ]
+  },
+  {
+    id: 31,
+    videoSrc: "/videos/Flem How to Blink_1.mp4",
+    username: "flem",
+    description: "Description placeholder",
+    profilePic: "🧘",
+    likes: 612,
+    saves: 223,
+    comments: [
+      { user: "user1", text: "Comment placeholder", profilePic: "👁️", daysAgo: 1, likes: 89 },
+      { user: "user2", text: "Comment placeholder", profilePic: "👀", daysAgo: 2, likes: 76 },
+      { user: "user3", text: "Comment placeholder", profilePic: "💡", daysAgo: 2, likes: 63 }
+    ]
+  },
+  {
+    id: 32,
+    videoSrc: "/videos/Sang Implants_1.mp4",
+    username: "sang",
+    description: "Description placeholder",
+    profilePic: "🦇",
+    likes: 689,
+    saves: 256,
+    comments: [
+      { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 91 },
+      { user: "user2", text: "Comment placeholder", profilePic: "💫", daysAgo: 1, likes: 78 },
+      { user: "user3", text: "Comment placeholder", profilePic: "⭐", daysAgo: 3, likes: 67 }
+    ]
   }
 ];
