@@ -64,7 +64,6 @@ const TikTokApp = ({ creator = null }) => {
   }, []);
 
   // Update container position when currentIndex changes
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const container = containerRef.current;
     if (container && !isDragging) {
@@ -98,7 +97,7 @@ const TikTokApp = ({ creator = null }) => {
         }, 50);
       }
     }
-  }, [currentIndex, isDragging, videos.length, filteredVideos.length]);
+  }, [containerRef, currentIndex, isDragging, videos.length, filteredVideos.length]);
 
   // Handle like button
   const handleLike = (videoId) => {
