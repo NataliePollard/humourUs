@@ -49,7 +49,7 @@ const TikTokApp = ({ creator = null }) => {
     setSavedVideos({});
   };
 
-  const { isDragging, containerRef, handleStart, handleMove, handleEnd } = useGestureHandling(handleNavigation);
+  const { isDragging, containerRef, handleStart, handleMove, handleEnd } = useGestureHandling(handleNavigation, currentIndex);
 
   // Speed control for current video
   const { handleSpeedStart, handleSpeedEnd } = useSpeedControl(

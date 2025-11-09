@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 
-export const useGestureHandling = (onNavigate) => {
+export const useGestureHandling = (onNavigate, currentIndex) => {
   const [startY, setStartY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
@@ -18,7 +18,6 @@ export const useGestureHandling = (onNavigate) => {
     const diffY = startY - clientY;
 
     if (containerRef.current) {
-      const currentIndex = parseInt(containerRef.current.dataset.currentIndex) || 0;
       const offset = -currentIndex * 100 - (diffY / window.innerHeight) * 100;
       containerRef.current.style.transform = `translateY(${offset}vh)`;
     }
