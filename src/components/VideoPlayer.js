@@ -47,13 +47,13 @@ const VideoPlayer = ({
       {onToggleMute && (
         <button
           onClick={onToggleMute}
-          className="absolute top-4 left-4 z-50 bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full p-2 transition-all duration-200 backdrop-blur-sm"
+          className="absolute top-4 left-4 z-50 transition-all duration-200"
           aria-label={isMuted ? 'Unmute' : 'Mute'}
         >
           {isMuted ? (
-            <img src="/icons/mute.png" alt="Mute" className="w-6 h-6" />
+            <img src="/icons/mute.png" alt="Mute" className="w-10 h-10" />
           ) : (
-            <img src="/icons/sound.png" alt="Sound" className="w-6 h-6" />
+            <img src="/icons/sound.png" alt="Sound" className="w-10 h-10" />
           )}
         </button>
       )}
