@@ -19,12 +19,7 @@ export const setViewportHeight = () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
 
-// Create infinite video array
+// Return videos as-is (no infinite loop tripling)
 export const createInfiniteVideoArray = (originalVideos) => {
-  return [...originalVideos, ...originalVideos, ...originalVideos];
-};
-
-// Get middle index for infinite loop
-export const getMiddleIndex = (totalLength) => {
-  return Math.floor(totalLength / 3);
+  return originalVideos;
 };

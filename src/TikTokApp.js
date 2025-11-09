@@ -67,37 +67,11 @@ const TikTokApp = ({ creator = null }) => {
   useEffect(() => {
     const container = containerRef.current;
     if (container && !isDragging) {
-      const filteredVideosLength = filteredVideos.length;
-
-      // Check if we need to wrap (disable transition for wrapping)
-      const previousIndex = parseInt(container.dataset.previousIndex) || currentIndex;
-      const shouldDisableTransition =
-        (currentIndex === videos.length - 1) ||
-        (currentIndex === 0) ||
-        (currentIndex === filteredVideosLength && previousIndex === videos.length - 1) ||
-        (currentIndex === filteredVideosLength * 2 - 1 && previousIndex === 0);
-
-      if (shouldDisableTransition) {
-        container.style.transition = 'none';
-      } else {
-        container.style.transition = 'transform 0.3s ease-out';
-      }
-
+      container.style.transition = 'transform 0.3s ease-out';
       const offset = -currentIndex * 100;
       container.style.transform = `translateY(${offset}vh)`;
-      container.dataset.currentIndex = currentIndex;
-      container.dataset.previousIndex = currentIndex;
-
-      // Re-enable transition after a brief delay for wrapping
-      if (shouldDisableTransition) {
-        setTimeout(() => {
-          if (container) {
-            container.style.transition = 'transform 0.3s ease-out';
-          }
-        }, 50);
-      }
     }
-  }, [containerRef, currentIndex, isDragging, videos.length, filteredVideos.length]);
+  }, [containerRef, currentIndex, isDragging]);
 
   // Handle like button
   const handleLike = (videoId) => {

@@ -7,10 +7,10 @@ export const useVideoPlayer = (videos) => {
   const [videoProgress, setVideoProgress] = useState({});
   const videoRefs = useRef({});
 
-  // Initialize to middle of array for infinite loop
+  // Initialize to first video
   useEffect(() => {
     if (videos.length > 0) {
-      setCurrentIndex(Math.floor(videos.length / 3)); // Middle set
+      setCurrentIndex(0);
     }
   }, [videos.length]);
 
@@ -33,12 +33,11 @@ export const useVideoPlayer = (videos) => {
       // Reset current video to beginning
       currentVideo.currentTime = 0;
 
-      // For first video, don't auto-play
-      const isFirstVideo = currentIndex === Math.floor(videos.length / 3);
-      if (isFirstVideo || !hasStarted) {
+      // Don't auto-play until user has interacted with the app
+      if (!hasStarted) {
         currentVideo.pause();
       }
-      // For other videos after user has started, let them auto-play
+      // After user has started, let videos auto-play
       // The onCanPlayThrough callback will handle the actual play() call
     }
   }, [currentIndex, hasStarted, videos.length]);
@@ -97,29 +96,6 @@ export const useVideoPlayer = (videos) => {
     setCurrentIndex(newIndex);
   };
 
-  // Handle infinite loop wrapping after transitions
-  useEffect(() => {
-    const originalVideosLength = Math.floor(videos.length / 3);
-
-    // Only wrap at the very edges, not at index 0 or videos.length-1
-    if (currentIndex === videos.length - 1) {
-      // At the very end, wrap to the beginning of the middle set
-      const timer = setTimeout(() => {
-        const wrappedIndex = originalVideosLength;
-        setCurrentIndex(wrappedIndex);
-        setIsPaused(prev => ({ ...prev, [wrappedIndex]: false }));
-      }, 300);
-      return () => clearTimeout(timer);
-    } else if (currentIndex === 0) {
-      // At the very beginning, wrap to the end of the middle set
-      const timer = setTimeout(() => {
-        const wrappedIndex = originalVideosLength * 2 - 1;
-        setCurrentIndex(wrappedIndex);
-        setIsPaused(prev => ({ ...prev, [wrappedIndex]: false }));
-      }, 300);
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex, videos.length]);
 
   return {
     currentIndex,
