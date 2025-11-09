@@ -10,7 +10,7 @@ import VideoSidebar from './components/VideoSidebar';
 import ProgressBar from './components/ProgressBar';
 import CommentsModal from './components/CommentsModal';
 import { originalVideos } from './data/videoData';
-import { createInfiniteVideoArray, setViewportHeight, vibrate } from './utils/helpers';
+import { setViewportHeight, vibrate } from './utils/helpers';
 
 const TikTokApp = ({ creator = null }) => {
   const [showComments, setShowComments] = useState(false);
@@ -23,8 +23,7 @@ const TikTokApp = ({ creator = null }) => {
     ? originalVideos.filter(video => video.username === creator.toLowerCase())
     : originalVideos;
 
-  // Create infinite loop by tripling the videos
-  const videos = createInfiniteVideoArray(filteredVideos);
+  const videos = filteredVideos;
 
   // Custom hooks
   const {

@@ -18,8 +18,3 @@ export const setViewportHeight = () => {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
-
-// Return videos as-is (no infinite loop tripling)
-export const createInfiniteVideoArray = (originalVideos) => {
-  return originalVideos;
-};
