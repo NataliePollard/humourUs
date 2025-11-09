@@ -41,7 +41,15 @@ const TikTokApp = ({ creator = null }) => {
   const { cacheProgress, getCachedVideoUrl } = useVideoCaching();
 
   const handleNavigation = (direction) => {
-    const newIndex = currentIndex + direction;
+    let newIndex = currentIndex + direction;
+
+    // Wrap around: loop back to first video or to last video
+    if (newIndex >= filteredVideos.length) {
+      newIndex = 0;
+    } else if (newIndex < 0) {
+      newIndex = filteredVideos.length - 1;
+    }
+
     navigateToVideo(newIndex, filteredVideos.length);
 
     // Reset interactions when swiping away
