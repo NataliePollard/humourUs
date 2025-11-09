@@ -15,7 +15,6 @@ export const useVideoPlayer = (videos) => {
   }, [videos.length]);
 
   // Handle video playback when currentIndex changes (scrolling)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // Pause all non-current videos
     Object.keys(videoRefs.current).forEach(index => {
@@ -40,8 +39,7 @@ export const useVideoPlayer = (videos) => {
         currentVideo.pause();
       }
     }
-    // Note: isPaused intentionally not in dependencies - we only want to trigger on index/hasStarted changes
-  }, [currentIndex, hasStarted, videos.length]);
+  }, [currentIndex, hasStarted, isPaused, videos.length]);
 
   // Handle pause/resume without resetting position
   // eslint-disable-next-line react-hooks/exhaustive-deps
