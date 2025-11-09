@@ -19,27 +19,28 @@ export const useVideoPlayer = (videos) => {
   useEffect(() => {
     // Pause all non-current videos
     Object.keys(videoRefs.current).forEach(index => {
-      if (parseInt(index) !== currentIndex) {
-        const video = videoRefs.current[index];
-        if (video && !video.paused) {
-          video.pause();
-        }
+      const video = videoRefs.current[index];
+      if (video && parseInt(index) !== currentIndex) {
+        video.pause();
       }
     });
 
-    // Reset and handle the current video
+    // Play or pause the current video
     const currentVideo = videoRefs.current[currentIndex];
     if (currentVideo) {
       // Reset current video to beginning
       currentVideo.currentTime = 0;
 
-      // Don't auto-play until user has interacted with the app
-      if (!hasStarted) {
+      // Only play if user has started interacting and video is not manually paused
+      if (hasStarted && !isPaused[currentIndex]) {
+        currentVideo.play().catch(error => {
+          console.warn('Play failed:', error);
+        });
+      } else {
         currentVideo.pause();
       }
-      // After user has started, let videos auto-play
-      // The onCanPlayThrough callback will handle the actual play() call
     }
+    // Note: isPaused intentionally not in dependencies - we only want to trigger on index/hasStarted changes
   }, [currentIndex, hasStarted, videos.length]);
 
   // Handle pause/resume without resetting position

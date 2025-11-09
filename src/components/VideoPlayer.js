@@ -21,7 +21,6 @@ const VideoPlayer = ({
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         src={getCachedVideoUrl(video.videoSrc)}
-        autoPlay
         playsInline
         preload="none"
         muted={isMuted}
