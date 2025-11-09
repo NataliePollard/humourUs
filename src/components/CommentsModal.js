@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CommentsModal = ({ video, onClose }) => {
   const handleBackdropClick = (e) => {
     // Only close if clicking the backdrop, not the modal content

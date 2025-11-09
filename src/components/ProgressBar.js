@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ProgressBar = ({ progress = 0 }) => {
   return (
     <>

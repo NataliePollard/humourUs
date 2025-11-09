@@ -1,14 +1,9 @@
-import React from 'react';
-
 const VideoPlayer = ({
   video,
   index,
   currentIndex,
   videoRef,
   onTimeUpdate,
-  onLoadStart,
-  onCanPlayThrough,
-  onError,
   getCachedVideoUrl,
   onSpeedStart,
   onSpeedEnd,
@@ -26,9 +21,6 @@ const VideoPlayer = ({
         muted={isMuted}
         loop
         onTimeUpdate={(e) => onTimeUpdate(video.id, e.target.currentTime, e.target.duration)}
-        onLoadStart={() => onLoadStart(index)}
-        onCanPlayThrough={() => onCanPlayThrough(index)}
-        onError={onError}
       />
       {/* 2x Speed Control Area - Right side above heart */}
       {onSpeedStart && onSpeedEnd && (

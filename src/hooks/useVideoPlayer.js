@@ -90,19 +90,16 @@ export const useVideoPlayer = (videos) => {
     }));
   };
 
-  const navigateToVideo = (newIndex, originalVideosLength) => {
+  const navigateToVideo = (newIndex) => {
     // Reset pause state for the new video (TikTok auto-play behavior)
     setIsPaused(prev => ({ ...prev, [newIndex]: false }));
 
     setCurrentIndex(newIndex);
   };
 
-
   return {
     currentIndex,
-    setCurrentIndex,
     isPaused,
-    setIsPaused,
     hasStarted,
     videoProgress,
     videoRefs,

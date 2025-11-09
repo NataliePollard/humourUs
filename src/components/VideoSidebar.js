@@ -1,4 +1,3 @@
-import React from 'react';
 import { formatLikes } from '../utils/helpers';
 
 const VideoSidebar = ({

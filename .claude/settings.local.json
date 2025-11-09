@@ -8,7 +8,13 @@
       "Bash(git commit:*)",
       "Bash(git push)",
       "Bash(git rm:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(set:*)",
+      "Bash(npm start)",
+      "Bash(taskkill:*)",
+      "Bash(nul)",
+      "Bash(timeout 15 bash:*)",
+      "Bash(netstat:*)"
     ],
     "deny": [],
     "ask": []

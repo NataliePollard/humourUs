@@ -1,5 +1,3 @@
-import React from 'react';
-
 const VideoOverlay = ({ isPaused, hasStarted, index, currentIndex, onTogglePlay }) => {
   const handleClick = () => {
     if (index === currentIndex) {

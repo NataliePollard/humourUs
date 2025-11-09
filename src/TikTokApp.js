@@ -49,7 +49,7 @@ const TikTokApp = ({ creator = null }) => {
       newIndex = filteredVideos.length - 1;
     }
 
-    navigateToVideo(newIndex, filteredVideos.length);
+    navigateToVideo(newIndex);
 
     // Reset interactions when swiping away
     setLikedVideos({});
@@ -98,21 +98,6 @@ const TikTokApp = ({ creator = null }) => {
     }));
   };
 
-  const handleVideoLoadStart = (index) => {
-    // Don't pause on load - this breaks video loading on iOS
-    // Let the videos load naturally
-  };
-
-  const handleVideoCanPlayThrough = (index) => {
-    // onCanPlayThrough fires when video has buffered enough to play through
-    // With muted attribute, iOS will auto-play without explicit play() call
-    // Just tracking that the video is ready
-    console.log(`Video ${index} can play through`);
-  };
-
-  const handleVideoError = (e) => {
-    console.warn('Video load error:', e);
-  };
 
   const handleToggleMute = () => {
     const newMutedState = !isMuted;
@@ -161,9 +146,6 @@ const TikTokApp = ({ creator = null }) => {
               onTimeUpdate={(videoId, time, duration) => {
                 handleVideoProgress(videoId, time, duration);
               }}
-              onLoadStart={handleVideoLoadStart}
-              onCanPlayThrough={handleVideoCanPlayThrough}
-              onError={handleVideoError}
               getCachedVideoUrl={getCachedVideoUrl}
               onSpeedStart={index === currentIndex ? handleSpeedStart : undefined}
               onSpeedEnd={index === currentIndex ? handleSpeedEnd : undefined}

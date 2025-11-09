@@ -1,8 +1,7 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export const useSpeedControl = (videoRef) => {
   const [isSpeedUp, setIsSpeedUp] = useState(false);
-  const speedTimeoutRef = useRef(null);
 
   useEffect(() => {
     if (!videoRef.current) return;
@@ -12,10 +11,6 @@ export const useSpeedControl = (videoRef) => {
   }, [isSpeedUp, videoRef]);
 
   const handleSpeedStart = () => {
-    // Clear any pending timeout
-    if (speedTimeoutRef.current) {
-      clearTimeout(speedTimeoutRef.current);
-    }
     setIsSpeedUp(true);
   };
 
@@ -23,14 +18,8 @@ export const useSpeedControl = (videoRef) => {
     setIsSpeedUp(false);
   };
 
-  const handleSpeedCancel = () => {
-    setIsSpeedUp(false);
-  };
-
   return {
-    isSpeedUp,
     handleSpeedStart,
-    handleSpeedEnd,
-    handleSpeedCancel
+    handleSpeedEnd
   };
 };
