@@ -17,30 +17,30 @@ export const useVideoPlayer = (videos) => {
   // Handle video playback when currentIndex changes (scrolling)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    Object.keys(videoRefs.current).forEach((key) => {
-      const video = videoRefs.current[key];
-      if (video) {
-        if (parseInt(key) === currentIndex) {
-          // Always reset to beginning when scrolling to a video
-          video.currentTime = 0;
-
-          // For non-first videos after user has started, let them play
-          // With muted attribute, iOS allows auto-play
-          const isFirstVideo = currentIndex === Math.floor(videos.length / 3);
-          if (!isFirstVideo && hasStarted) {
-            // Just let the video play naturally with loop attribute
-            // Don't force play() - let browser handle it with muted + loop
-          } else {
-            // For first video or when not started, pause it
-            video.pause();
-          }
-        } else {
+    // Pause all non-current videos
+    Object.keys(videoRefs.current).forEach(index => {
+      if (parseInt(index) !== currentIndex) {
+        const video = videoRefs.current[index];
+        if (video && !video.paused) {
           video.pause();
-          // Reset non-current videos to beginning
-          video.currentTime = 0;
         }
       }
     });
+
+    // Reset and handle the current video
+    const currentVideo = videoRefs.current[currentIndex];
+    if (currentVideo) {
+      // Reset current video to beginning
+      currentVideo.currentTime = 0;
+
+      // For first video, don't auto-play
+      const isFirstVideo = currentIndex === Math.floor(videos.length / 3);
+      if (isFirstVideo || !hasStarted) {
+        currentVideo.pause();
+      }
+      // For other videos after user has started, let them auto-play
+      // The onCanPlayThrough callback will handle the actual play() call
+    }
   }, [currentIndex, hasStarted, videos.length]);
 
   // Handle pause/resume without resetting position

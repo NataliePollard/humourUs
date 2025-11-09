@@ -16,6 +16,7 @@ const TikTokApp = ({ creator = null }) => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
+  const [isMuted, setIsMuted] = useState(true);
 
   // Filter videos by creator if specified
   const filteredVideos = creator
@@ -37,7 +38,7 @@ const TikTokApp = ({ creator = null }) => {
     navigateToVideo
   } = useVideoPlayer(videos);
 
-  const { cacheProgress, getCachedVideoUrl } = useVideoCaching(videos, currentIndex);
+  const { cacheProgress, getCachedVideoUrl } = useVideoCaching();
 
   const handleNavigation = (direction) => {
     const newIndex = currentIndex + direction;
@@ -97,7 +98,7 @@ const TikTokApp = ({ creator = null }) => {
         }, 50);
       }
     }
-  }, [currentIndex, isDragging, videos.length, originalVideos.length]);
+  }, [currentIndex, isDragging, videos.length, filteredVideos.length]);
 
   // Handle like button
   const handleLike = (videoId) => {
@@ -118,29 +119,30 @@ const TikTokApp = ({ creator = null }) => {
   };
 
   const handleVideoLoadStart = (index) => {
-    const videoEl = videoRefs.current[index];
-    if (videoEl) {
-      videoEl.pause();
-    }
+    // Don't pause on load - this breaks video loading on iOS
+    // Let the videos load naturally
   };
 
   const handleVideoCanPlayThrough = (index) => {
-    // Auto-play muted videos when they're ready (iOS allows muted autoplay)
-    if (index === currentIndex && hasStarted) {
-      const isFirstVideo = currentIndex === Math.floor(videos.length / 3);
-      if (!isFirstVideo) {
-        const videoEl = videoRefs.current[index];
-        if (videoEl && !isPaused[currentIndex]) {
-          videoEl.play().catch(err => {
-            // Muted autoplay might still fail on some devices, ignore
-          });
-        }
-      }
-    }
+    // onCanPlayThrough fires when video has buffered enough to play through
+    // With muted attribute, iOS will auto-play without explicit play() call
+    // Just tracking that the video is ready
+    console.log(`Video ${index} can play through`);
   };
 
   const handleVideoError = (e) => {
     console.warn('Video load error:', e);
+  };
+
+  const handleToggleMute = () => {
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    // Apply mute state to all videos immediately
+    Object.values(videoRefs.current).forEach(video => {
+      if (video) {
+        video.muted = newMutedState;
+      }
+    });
   };
 
   return (
@@ -185,6 +187,8 @@ const TikTokApp = ({ creator = null }) => {
               getCachedVideoUrl={getCachedVideoUrl}
               onSpeedStart={index === currentIndex ? handleSpeedStart : undefined}
               onSpeedEnd={index === currentIndex ? handleSpeedEnd : undefined}
+              isMuted={isMuted}
+              onToggleMute={index === currentIndex ? handleToggleMute : undefined}
             />
 
             <VideoOverlay
