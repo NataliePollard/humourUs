@@ -35,20 +35,6 @@ const VideoPlayer = ({
         />
       )}
 
-      {/* Mute/Unmute Button - Top left */}
-      {onToggleMute && (
-        <button
-          onClick={onToggleMute}
-          className="absolute top-4 left-4 z-50 transition-all duration-200"
-          aria-label={isMuted ? 'Unmute' : 'Mute'}
-        >
-          {isMuted ? (
-            <img src="/icons/mute.png" alt="Mute" className="w-16 h-16" />
-          ) : (
-            <img src="/icons/sound.png" alt="Sound" className="w-16 h-16" />
-          )}
-        </button>
-      )}
     </>
   );
 };

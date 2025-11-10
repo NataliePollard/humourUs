@@ -159,6 +159,8 @@ const TikTokApp = ({ creator = null }) => {
               index={index}
               currentIndex={currentIndex}
               onTogglePlay={togglePlayPause}
+              isMuted={isMuted}
+              onToggleMute={index === currentIndex ? handleToggleMute : undefined}
             />
 
             <ProgressBar progress={videoProgress[video.id] || 0} />

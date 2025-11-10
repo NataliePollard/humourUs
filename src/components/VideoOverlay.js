@@ -1,6 +1,11 @@
-const VideoOverlay = ({ isPaused, hasStarted, index, currentIndex, onTogglePlay }) => {
+const VideoOverlay = ({ isPaused, hasStarted, index, currentIndex, onTogglePlay, isMuted, onToggleMute }) => {
   const handleClick = () => {
     if (index === currentIndex) {
+      // Unmute only on first play (when hasStarted is false)
+      if (!hasStarted && isMuted) {
+        onToggleMute();
+      }
+      // Toggle play/pause
       onTogglePlay(index);
     }
   };
