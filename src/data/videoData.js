@@ -2,7 +2,7 @@ export const originalVideos = [
   {
     id: 1,
     videoSrc: "/videos/Col - Erection Supplements.mp4",
-    username: "col",
+    username: "cole",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 542,
@@ -16,7 +16,7 @@ export const originalVideos = [
   {
     id: 2,
     videoSrc: "/videos/Col - Protein Powder Edit.mp4",
-    username: "col",
+    username: "cole",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 678,
@@ -30,7 +30,7 @@ export const originalVideos = [
   {
     id: 3,
     videoSrc: "/videos/Cole - Elixir.mp4",
-    username: "col",
+    username: "cole",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 567,
@@ -44,7 +44,7 @@ export const originalVideos = [
   {
     id: 4,
     videoSrc: "/videos/Cole - Tiktok1.mp4",
-    username: "col",
+    username: "cole",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 612,
@@ -58,7 +58,7 @@ export const originalVideos = [
   {
     id: 5,
     videoSrc: "/videos/Cole Hammer Swing_2.mp4",
-    username: "col",
+    username: "cole",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 723,
@@ -414,7 +414,7 @@ export const originalVideos = [
   {
     id: 30,
     videoSrc: "/videos/Col Death Consipracy Real_1.mp4",
-    username: "col",
+    username: "cole",
     description: "Description placeholder",
     profilePic: "🧙",
     likes: 567,
