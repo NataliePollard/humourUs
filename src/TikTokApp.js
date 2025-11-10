@@ -37,7 +37,7 @@ const TikTokApp = ({ creator = null }) => {
     navigateToVideo
   } = useVideoPlayer(videos);
 
-  const { cacheProgress, getCachedVideoUrl } = useVideoCaching();
+  const { cacheProgress, getCachedVideoUrl } = useVideoCaching(creator);
 
   const handleNavigation = (direction) => {
     let newIndex = currentIndex + direction;

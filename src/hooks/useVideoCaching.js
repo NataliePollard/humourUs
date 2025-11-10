@@ -1,15 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { originalVideos } from '../data/videoData';
 
-export const useVideoCaching = () => {
+export const useVideoCaching = (creator = null) => {
   const [cacheProgress, setCacheProgress] = useState(0);
   const [cachedVideos, setCachedVideos] = useState({});
   const blobUrlsRef = useRef([]);
 
   useEffect(() => {
-    // Pre-cache all videos on app load
+    // Pre-cache videos on app load
     const cacheAllVideos = async () => {
-      const videoUrls = originalVideos.map(video => video.videoSrc);
+      // Filter videos by creator if specified
+      const videosToCache = creator
+        ? originalVideos.filter(video => video.username === creator.toLowerCase())
+        : originalVideos;
+
+      const videoUrls = videosToCache.map(video => video.videoSrc);
       let cached = 0;
 
       for (const url of videoUrls) {
@@ -46,7 +51,7 @@ export const useVideoCaching = () => {
       });
       blobUrlsRef.current = [];
     };
-  }, []);
+  }, [creator]);
 
   const getCachedVideoUrl = (src) => {
     // Return cached blob URL if available, otherwise return original URL
