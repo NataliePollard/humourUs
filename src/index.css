@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* iOS Safe Area Support */
-html, body, #root {
+html, body {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -32,5 +32,4 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  padding: max(0px, env(safe-area-inset-top)) max(0px, env(safe-area-inset-right)) max(0px, env(safe-area-inset-bottom)) max(0px, env(safe-area-inset-left));
 }
