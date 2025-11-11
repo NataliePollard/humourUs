@@ -15,7 +15,8 @@
       "Bash(nul)",
       "Bash(timeout 15 bash:*)",
       "Bash(netstat:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(sed:*)"
     ],
     "deny": [],
     "ask": []
