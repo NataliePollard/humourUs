@@ -4,7 +4,6 @@ export const originalVideos = [
     videoSrc: "/videos/Col - Erection Supplements.mp4",
     username: "cole",
     description: "Description placeholder\nCol - Erection Supplements.mp4",
-    profilePic: "🧙",
     likes: 542,
     saves: 187,
     comments: [
@@ -18,7 +17,6 @@ export const originalVideos = [
     videoSrc: "/videos/Col - Protein Powder Edit.mp4",
     username: "cole",
     description: "Description placeholder\nCol - Protein Powder Edit.mp4",
-    profilePic: "🧙",
     likes: 678,
     saves: 245,
     comments: [
@@ -32,7 +30,6 @@ export const originalVideos = [
     videoSrc: "/videos/Cole - Elixir.mp4",
     username: "cole",
     description: "Description placeholder\nCole - Elixir.mp4",
-    profilePic: "🧙",
     likes: 567,
     saves: 198,
     comments: [
@@ -46,7 +43,6 @@ export const originalVideos = [
     videoSrc: "/videos/Cole - Tiktok1.mp4",
     username: "cole",
     description: "Description placeholder\nCole - Tiktok1.mp4",
-    profilePic: "🧙",
     likes: 612,
     saves: 213,
     comments: [
@@ -60,7 +56,6 @@ export const originalVideos = [
     videoSrc: "/videos/Cole Hammer Swing_2.mp4",
     username: "cole",
     description: "Description placeholder\nCole Hammer Swing_2.mp4",
-    profilePic: "🧙",
     likes: 723,
     saves: 267,
     comments: [
@@ -75,7 +70,6 @@ export const originalVideos = [
     videoSrc: "/videos/Flem - Tiktok0.mp4",
     username: "flem",
     description: "Description placeholder\nFlem - Tiktok0.mp4",
-    profilePic: "🧘",
     likes: 489,
     saves: 176,
     comments: [
@@ -89,7 +83,6 @@ export const originalVideos = [
     videoSrc: "/videos/Flem - Tiktok1.mp4",
     username: "flem",
     description: "Description placeholder\nFlem - Tiktok1.mp4",
-    profilePic: "🧘",
     likes: 534,
     saves: 201,
     comments: [
@@ -103,7 +96,6 @@ export const originalVideos = [
     videoSrc: "/videos/Flem - Tiktok3.mp4",
     username: "flem",
     description: "Description placeholder\nFlem - Tiktok3.mp4",
-    profilePic: "🧘",
     likes: 456,
     saves: 167,
     comments: [
@@ -117,7 +109,6 @@ export const originalVideos = [
     videoSrc: "/videos/Flem - Tiktok4.mp4",
     username: "flem",
     description: "Description placeholder\nFlem - Tiktok4.mp4",
-    profilePic: "🧘",
     likes: 523,
     saves: 189,
     comments: [
@@ -131,7 +122,6 @@ export const originalVideos = [
     videoSrc: "/videos/Flem Diagram.mp4",
     username: "flem",
     description: "Description placeholder\nFlem Diagram.mp4",
-    profilePic: "🧘",
     likes: 645,
     saves: 234,
     comments: [
@@ -145,7 +135,6 @@ export const originalVideos = [
     videoSrc: "/videos/Flem How to Blink.mp4",
     username: "flem",
     description: "Description placeholder\nFlem How to Blink.mp4",
-    profilePic: "🧘",
     likes: 612,
     saves: 223,
     comments: [
@@ -159,7 +148,6 @@ export const originalVideos = [
     videoSrc: "/videos/Flem Solo Leah.mp4",
     username: "flem",
     description: "Description placeholder\nFlem Solo Leah.mp4",
-    profilePic: "🧘",
     likes: 567,
     saves: 201,
     comments: [
@@ -173,7 +161,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel - Lord Brayn Rumors.mp4",
     username: "mel",
     description: "Description placeholder\nMel - Lord Brayn Rumors.mp4",
-    profilePic: "🔍",
     likes: 812,
     saves: 312,
     comments: [
@@ -188,7 +175,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel - Tiktok1.mp4",
     username: "mel",
     description: "Description placeholder\nMel - Tiktok1.mp4",
-    profilePic: "🔍",
     likes: 678,
     saves: 245,
     comments: [
@@ -202,7 +188,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel - Tiktok2.mp4",
     username: "mel",
     description: "Description placeholder\nMel - Tiktok2.mp4",
-    profilePic: "🔍",
     likes: 723,
     saves: 267,
     comments: [
@@ -216,7 +201,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel - Tiktok3.mp4",
     username: "mel",
     description: "Description placeholder\nMel - Tiktok3.mp4",
-    profilePic: "🔍",
     likes: 645,
     saves: 234,
     comments: [
@@ -230,7 +214,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel - Tiktok4.mp4",
     username: "mel",
     description: "Description placeholder\nMel - Tiktok4.mp4",
-    profilePic: "🔍",
     likes: 534,
     saves: 201,
     comments: [
@@ -244,7 +227,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel - Tiktok5.mp4",
     username: "mel",
     description: "Description placeholder\nMel - Tiktok5.mp4",
-    profilePic: "🔍",
     likes: 612,
     saves: 223,
     comments: [
@@ -258,7 +240,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel Conspiracy Rant.mp4",
     username: "mel",
     description: "Description placeholder\nMel Conspiracy Rant.mp4",
-    profilePic: "🔍",
     likes: 934,
     saves: 401,
     comments: [
@@ -274,7 +255,6 @@ export const originalVideos = [
     videoSrc: "/videos/mel truly final.mp4",
     username: "mel",
     description: "Description placeholder\nmel truly final.mp4",
-    profilePic: "🔍",
     likes: 567,
     saves: 189,
     comments: [
@@ -288,7 +268,6 @@ export const originalVideos = [
     videoSrc: "/videos/Mel Wonder Tour Colored.mp4",
     username: "mel",
     description: "Description placeholder\nMel Wonder Tour Colored.mp4",
-    profilePic: "🔍",
     likes: 712,
     saves: 289,
     comments: [
@@ -302,7 +281,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang - Kombucha.mp4",
     username: "sang",
     description: "Description placeholder\nSang - Kombucha.mp4",
-    profilePic: "🦇",
     likes: 623,
     saves: 234,
     comments: [
@@ -316,7 +294,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang - tiktok1_1.mp4",
     username: "sang",
     description: "Description placeholder\nSang - tiktok1_1.mp4",
-    profilePic: "🦇",
     likes: 534,
     saves: 201,
     comments: [
@@ -330,7 +307,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang - Tiktok2.mp4",
     username: "sang",
     description: "Description placeholder\nSang - Tiktok2.mp4",
-    profilePic: "🦇",
     likes: 689,
     saves: 256,
     comments: [
@@ -344,7 +320,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang - Tiktok3.mp4",
     username: "sang",
     description: "Description placeholder\nSang - Tiktok3.mp4",
-    profilePic: "🦇",
     likes: 612,
     saves: 223,
     comments: [
@@ -358,7 +333,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang - Tiktok4.mp4",
     username: "sang",
     description: "Description placeholder\nSang - Tiktok4.mp4",
-    profilePic: "🦇",
     likes: 745,
     saves: 278,
     comments: [
@@ -372,7 +346,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang Doe Eyes.mp4",
     username: "sang",
     description: "Description placeholder\nSang Doe Eyes.mp4",
-    profilePic: "🦇",
     likes: 823,
     saves: 312,
     comments: [
@@ -387,7 +360,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang Raver Girl Bath Blood.mp4",
     username: "sang",
     description: "Description placeholder\nSang Raver Girl Bath Blood.mp4",
-    profilePic: "🦇",
     likes: 456,
     saves: 167,
     comments: [
@@ -401,7 +373,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang Vampires.mp4",
     username: "sang",
     description: "Description placeholder\nSang Vampires.mp4",
-    profilePic: "🦇",
     likes: 734,
     saves: 267,
     comments: [
@@ -416,7 +387,6 @@ export const originalVideos = [
     videoSrc: "/videos/Col Death Consipracy Real_1.mp4",
     username: "cole",
     description: "Description placeholder\nCol Death Consipracy Real_1.mp4",
-    profilePic: "🧙",
     likes: 567,
     saves: 201,
     comments: [
@@ -430,7 +400,6 @@ export const originalVideos = [
     videoSrc: "/videos/Sang Implants_1.mp4",
     username: "sang",
     description: "Description placeholder\nSang Implants_1.mp4",
-    profilePic: "🦇",
     likes: 689,
     saves: 256,
     comments: [

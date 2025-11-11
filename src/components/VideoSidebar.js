@@ -1,4 +1,5 @@
 import { formatLikes } from '../utils/helpers';
+import { creators } from '../data/creators';
 
 const VideoSidebar = ({
   video,
@@ -11,13 +12,12 @@ const VideoSidebar = ({
   return (
     <div className="absolute right-4 bottom-28 flex flex-col items-center space-y-6">
       {/* Profile picture */}
-      <div className="relative">
-        <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border-2 border-white">
-          <span className="text-xl">{video.profilePic}</span>
-        </div>
-        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-          <span className="text-white text-xs font-bold">+</span>
-        </div>
+      <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border-2 border-white overflow-hidden">
+        {creators[video.username]?.profilePic ? (
+          <img src={creators[video.username].profilePic} alt={video.username} className="w-full h-full object-cover" />
+        ) : (
+          <span className="text-xl">👤</span>
+        )}
       </div>
 
       {/* Like button */}
