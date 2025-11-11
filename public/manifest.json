@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "humourUs",
+  "name": "humourUs - Creator Videos",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,5 +21,55 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "shortcuts": [
+    {
+      "name": "Cole's Videos",
+      "short_name": "Cole",
+      "description": "Watch videos from Cole",
+      "url": "/cole",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Flem's Videos",
+      "short_name": "Flem",
+      "description": "Watch videos from Flem",
+      "url": "/flem",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Sang's Videos",
+      "short_name": "Sang",
+      "description": "Watch videos from Sang",
+      "url": "/sang",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Mel's Videos",
+      "short_name": "Mel",
+      "description": "Watch videos from Mel",
+      "url": "/mel",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }
