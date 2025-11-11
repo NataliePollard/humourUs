@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { formatLikes } from '../utils/helpers';
 import { creators } from '../data/creators';
 
@@ -9,6 +10,30 @@ const VideoSidebar = ({
   onSave,
   onShowComments
 }) => {
+  const [animatingLike, setAnimatingLike] = useState(false);
+  const [animatingSave, setAnimatingSave] = useState(false);
+
+  const videoId = video.id;
+  const isLiked = likedVideos[videoId];
+  const isSaved = savedVideos[videoId];
+
+  // Trigger like animation when likedVideos state changes
+  useEffect(() => {
+    if (isLiked) {
+      setAnimatingLike(true);
+      const timer = setTimeout(() => setAnimatingLike(false), 600);
+      return () => clearTimeout(timer);
+    }
+  }, [isLiked]);
+
+  // Trigger save animation when savedVideos state changes
+  useEffect(() => {
+    if (isSaved) {
+      setAnimatingSave(true);
+      const timer = setTimeout(() => setAnimatingSave(false), 600);
+      return () => clearTimeout(timer);
+    }
+  }, [isSaved]);
   return (
     <div className="absolute right-4 bottom-28 flex flex-col items-center space-y-6">
       {/* Profile picture */}
@@ -25,7 +50,7 @@ const VideoSidebar = ({
         <button
           onClick={() => onLike(video.id)}
           className={`w-12 h-12 flex items-center justify-center transition-all duration-200 ${
-            likedVideos[video.id] ? 'animate-pulse' : ''
+            animatingLike ? 'animate-pulse-once' : ''
           }`}
         >
           <svg
@@ -62,7 +87,7 @@ const VideoSidebar = ({
         <button
           onClick={() => onSave(video.id)}
           className={`w-12 h-12 flex items-center justify-center transition-all duration-200 ${
-            savedVideos[video.id] ? 'animate-pulse' : ''
+            animatingSave ? 'animate-pulse-once' : ''
           }`}
         >
           <svg
