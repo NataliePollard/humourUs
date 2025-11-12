@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ProgressBar = ({ progress = 0 }) => {
   return (
     <>
@@ -12,4 +14,4 @@ const ProgressBar = ({ progress = 0 }) => {
   );
 };
 
-export default ProgressBar;
+export default React.memo(ProgressBar);

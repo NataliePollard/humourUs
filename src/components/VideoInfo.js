@@ -1,3 +1,5 @@
+import React from 'react';
+
 const VideoInfo = ({ video }) => {
   return (
     <div className="absolute bottom-24 left-4 right-16 text-white">
@@ -9,4 +11,4 @@ const VideoInfo = ({ video }) => {
   );
 };
 
-export default VideoInfo;
+export default React.memo(VideoInfo);

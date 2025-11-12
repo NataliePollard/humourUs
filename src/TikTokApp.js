@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { useVideoPlayer } from './hooks/useVideoPlayer';
 import { useGestureHandling } from './hooks/useGestureHandling';
 import { useVideoCaching } from './hooks/useVideoCaching';
@@ -6,11 +6,13 @@ import { useSpeedControl } from './hooks/useSpeedControl';
 import VideoPlayer from './components/VideoPlayer';
 import VideoOverlay from './components/VideoOverlay';
 import VideoInfo from './components/VideoInfo';
-import VideoSidebar from './components/VideoSidebar';
 import ProgressBar from './components/ProgressBar';
-import CommentsModal from './components/CommentsModal';
 import { originalVideos } from './data/videoData';
 import { setViewportHeight, vibrate } from './utils/helpers';
+
+// Lazy load heavy components
+const VideoSidebar = lazy(() => import('./components/VideoSidebar'));
+const CommentsModal = lazy(() => import('./components/CommentsModal'));
 
 const TikTokApp = ({ creator = null }) => {
   const [showComments, setShowComments] = useState(false);
@@ -167,24 +169,28 @@ const TikTokApp = ({ creator = null }) => {
 
             <VideoInfo video={video} />
 
-            <VideoSidebar
-              video={video}
-              likedVideos={likedVideos}
-              savedVideos={savedVideos}
-              onLike={handleLike}
-              onSave={handleSave}
-              onShowComments={() => setShowComments(true)}
-            />
+            <Suspense fallback={null}>
+              <VideoSidebar
+                video={video}
+                likedVideos={likedVideos}
+                savedVideos={savedVideos}
+                onLike={handleLike}
+                onSave={handleSave}
+                onShowComments={() => setShowComments(true)}
+              />
+            </Suspense>
           </div>
         ))}
       </div>
 
       {/* Comments Modal */}
       {showComments && (
-        <CommentsModal
-          video={videos[currentIndex]}
-          onClose={() => setShowComments(false)}
-        />
+        <Suspense fallback={null}>
+          <CommentsModal
+            video={videos[currentIndex]}
+            onClose={() => setShowComments(false)}
+          />
+        </Suspense>
       )}
     </div>
   );
