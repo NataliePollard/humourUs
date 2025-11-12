@@ -89,6 +89,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
       const offset = -currentIndex * 100;
       container.style.transform = `translate3d(0, ${offset}vh, 0)`;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [containerRef, currentIndex, isDragging]);
 
   // Pause off-screen videos to reduce CPU usage
