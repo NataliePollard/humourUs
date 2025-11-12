@@ -110,8 +110,6 @@ const TikTokApp = ({ creator = null }) => {
     });
   };
 
-  // Virtual scrolling: only render current video and adjacent videos (previous and next)
-
   return (
     <div className="w-full overflow-hidden bg-black relative" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       {/* Small cache progress indicator */}
@@ -121,7 +119,7 @@ const TikTokApp = ({ creator = null }) => {
         </div>
       )}
 
-      {/* Video Container with Virtual Scrolling */}
+      {/* Video Container */}
       <div
         ref={containerRef}
         className="transition-transform duration-300 ease-out"
@@ -134,40 +132,43 @@ const TikTokApp = ({ creator = null }) => {
         onMouseLeave={handleEnd}
         style={{ transform: `translateY(-${currentIndex * 100}vh)`, height: '100%' }}
       >
-        {/* Previous video (if exists) */}
-        {currentIndex > 0 && (
+        {videos.map((video, index) => (
           <div
-            key={`${videos[currentIndex - 1].id}-prev`}
+            key={`${video.id}-${Math.floor(index / originalVideos.length)}`}
             className="h-screen w-full relative bg-black"
             style={{ height: '100vh' }}
           >
             <VideoPlayer
-              video={videos[currentIndex - 1]}
-              index={currentIndex - 1}
+              video={video}
+              index={index}
               currentIndex={currentIndex}
-              videoRef={(el) => videoRefs.current[currentIndex - 1] = el}
+              videoRef={(el) => videoRefs.current[index] = el}
               onTimeUpdate={(videoId, time, duration) => {
                 handleVideoProgress(videoId, time, duration);
               }}
               getCachedVideoUrl={getCachedVideoUrl}
-              onSpeedStart={undefined}
-              onSpeedEnd={undefined}
+              onSpeedStart={index === currentIndex ? handleSpeedStart : undefined}
+              onSpeedEnd={index === currentIndex ? handleSpeedEnd : undefined}
               isMuted={isMuted}
-              onToggleMute={undefined}
+              onToggleMute={index === currentIndex ? handleToggleMute : undefined}
             />
+
             <VideoOverlay
-              isPaused={isPaused[currentIndex - 1]}
+              isPaused={isPaused[index]}
               hasStarted={hasStarted}
-              index={currentIndex - 1}
+              index={index}
               currentIndex={currentIndex}
               onTogglePlay={togglePlayPause}
               isMuted={isMuted}
-              onToggleMute={undefined}
+              onToggleMute={index === currentIndex ? handleToggleMute : undefined}
             />
-            <ProgressBar progress={videoProgress[videos[currentIndex - 1].id] || 0} />
-            <VideoInfo video={videos[currentIndex - 1]} />
+
+            <ProgressBar progress={videoProgress[video.id] || 0} />
+
+            <VideoInfo video={video} />
+
             <VideoSidebar
-              video={videos[currentIndex - 1]}
+              video={video}
               likedVideos={likedVideos}
               savedVideos={savedVideos}
               onLike={handleLike}
@@ -175,95 +176,7 @@ const TikTokApp = ({ creator = null }) => {
               onShowComments={() => setShowComments(true)}
             />
           </div>
-        )}
-
-        {/* Current video */}
-        <div
-          key={`${videos[currentIndex].id}-current`}
-          className="h-screen w-full relative bg-black"
-          style={{ height: '100vh' }}
-        >
-          <VideoPlayer
-            video={videos[currentIndex]}
-            index={currentIndex}
-            currentIndex={currentIndex}
-            videoRef={(el) => videoRefs.current[currentIndex] = el}
-            onTimeUpdate={(videoId, time, duration) => {
-              handleVideoProgress(videoId, time, duration);
-            }}
-            getCachedVideoUrl={getCachedVideoUrl}
-            onSpeedStart={handleSpeedStart}
-            onSpeedEnd={handleSpeedEnd}
-            isMuted={isMuted}
-            onToggleMute={handleToggleMute}
-          />
-
-          <VideoOverlay
-            isPaused={isPaused[currentIndex]}
-            hasStarted={hasStarted}
-            index={currentIndex}
-            currentIndex={currentIndex}
-            onTogglePlay={togglePlayPause}
-            isMuted={isMuted}
-            onToggleMute={handleToggleMute}
-          />
-
-          <ProgressBar progress={videoProgress[videos[currentIndex].id] || 0} />
-
-          <VideoInfo video={videos[currentIndex]} />
-
-          <VideoSidebar
-            video={videos[currentIndex]}
-            likedVideos={likedVideos}
-            savedVideos={savedVideos}
-            onLike={handleLike}
-            onSave={handleSave}
-            onShowComments={() => setShowComments(true)}
-          />
-        </div>
-
-        {/* Next video (if exists) */}
-        {currentIndex < videos.length - 1 && (
-          <div
-            key={`${videos[currentIndex + 1].id}-next`}
-            className="h-screen w-full relative bg-black"
-            style={{ height: '100vh' }}
-          >
-            <VideoPlayer
-              video={videos[currentIndex + 1]}
-              index={currentIndex + 1}
-              currentIndex={currentIndex}
-              videoRef={(el) => videoRefs.current[currentIndex + 1] = el}
-              onTimeUpdate={(videoId, time, duration) => {
-                handleVideoProgress(videoId, time, duration);
-              }}
-              getCachedVideoUrl={getCachedVideoUrl}
-              onSpeedStart={undefined}
-              onSpeedEnd={undefined}
-              isMuted={isMuted}
-              onToggleMute={undefined}
-            />
-            <VideoOverlay
-              isPaused={isPaused[currentIndex + 1]}
-              hasStarted={hasStarted}
-              index={currentIndex + 1}
-              currentIndex={currentIndex}
-              onTogglePlay={togglePlayPause}
-              isMuted={isMuted}
-              onToggleMute={undefined}
-            />
-            <ProgressBar progress={videoProgress[videos[currentIndex + 1].id] || 0} />
-            <VideoInfo video={videos[currentIndex + 1]} />
-            <VideoSidebar
-              video={videos[currentIndex + 1]}
-              likedVideos={likedVideos}
-              savedVideos={savedVideos}
-              onLike={handleLike}
-              onSave={handleSave}
-              onShowComments={() => setShowComments(true)}
-            />
-          </div>
-        )}
+        ))}
       </div>
 
       {/* Comments Modal */}
