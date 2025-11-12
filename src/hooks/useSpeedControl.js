@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { VIDEO_CONFIG } from '../constants/appConstants';
 
 export const useSpeedControl = (videoRef) => {
   const [isSpeedUp, setIsSpeedUp] = useState(false);
@@ -7,7 +8,7 @@ export const useSpeedControl = (videoRef) => {
     if (!videoRef.current) return;
 
     // Set playback rate based on speed state
-    videoRef.current.playbackRate = isSpeedUp ? 2.0 : 1.0;
+    videoRef.current.playbackRate = isSpeedUp ? VIDEO_CONFIG.FAST_SPEED : VIDEO_CONFIG.NORMAL_SPEED;
   }, [isSpeedUp, videoRef]);
 
   const handleSpeedStart = () => {

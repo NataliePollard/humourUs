@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { GESTURE_CONFIG, VIEWPORT } from '../constants/appConstants';
 
 export const useGestureHandling = (onNavigate, currentIndex) => {
   const [startY, setStartY] = useState(0);
@@ -18,7 +19,7 @@ export const useGestureHandling = (onNavigate, currentIndex) => {
     const diffY = startY - clientY;
 
     if (containerRef.current) {
-      const offset = -currentIndex * 100 - (diffY / window.innerHeight) * 100;
+      const offset = -currentIndex * VIEWPORT.UNIT - (diffY / window.innerHeight) * VIEWPORT.UNIT;
       containerRef.current.style.transform = `translateY(${offset}vh)`;
     }
   };
@@ -29,9 +30,8 @@ export const useGestureHandling = (onNavigate, currentIndex) => {
 
     const clientY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
     const diffY = startY - clientY;
-    const threshold = 50;
 
-    if (Math.abs(diffY) > threshold) {
+    if (Math.abs(diffY) > GESTURE_CONFIG.SWIPE_THRESHOLD) {
       const direction = diffY > 0 ? 1 : -1;
       onNavigate(direction);
     }

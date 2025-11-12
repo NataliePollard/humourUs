@@ -17,8 +17,7 @@ export const useVideoPlayer = (videos) => {
   // Handle video playback when currentIndex changes (scrolling)
   useEffect(() => {
     // Pause all non-current videos
-    Object.keys(videoRefs.current).forEach(index => {
-      const video = videoRefs.current[index];
+    Object.entries(videoRefs.current).forEach(([index, video]) => {
       if (video && parseInt(index) !== currentIndex) {
         video.pause();
       }

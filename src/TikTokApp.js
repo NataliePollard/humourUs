@@ -9,6 +9,7 @@ import VideoInfo from './components/VideoInfo';
 import ProgressBar from './components/ProgressBar';
 import { originalVideos } from './data/videoData';
 import { setViewportHeight, vibrate } from './utils/helpers';
+import { VIRTUAL_SCROLLING, CACHE_CONFIG, ANIMATION_DURATIONS } from './constants/appConstants';
 
 // Lazy load heavy components
 const VideoSidebar = lazy(() => import('./components/VideoSidebar'));
@@ -65,11 +66,10 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
   );
 
   // Virtual scrolling: determine which videos to render
-  const RENDER_BUFFER = 2; // Render current ± 2 videos
   const visibleIndices = enableVirtualScrolling
     ? (() => {
-        const start = Math.max(0, currentIndex - RENDER_BUFFER);
-        const end = Math.min(videos.length, currentIndex + RENDER_BUFFER + 1);
+        const start = Math.max(0, currentIndex - VIRTUAL_SCROLLING.RENDER_BUFFER);
+        const end = Math.min(videos.length, currentIndex + VIRTUAL_SCROLLING.RENDER_BUFFER + 1);
         return Array.from({ length: end - start }, (_, i) => start + i);
       })()
     : videos.map((_, i) => i);
@@ -85,7 +85,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
   useEffect(() => {
     const container = containerRef.current;
     if (container && !isDragging) {
-      container.style.transition = 'transform 0.3s ease-out';
+      container.style.transition = `transform ${ANIMATION_DURATIONS.SCROLL_TRANSITION}ms ease-out`;
       const offset = -currentIndex * 100;
       container.style.transform = `translate3d(0, ${offset}vh, 0)`;
     }
@@ -142,7 +142,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
   return (
     <div className="w-full overflow-hidden bg-black relative" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       {/* Small cache progress indicator */}
-      {cacheProgress < 100 && cacheProgress > 0 && (
+      {cacheProgress < CACHE_CONFIG.DISPLAY_THRESHOLD_MAX && cacheProgress > CACHE_CONFIG.DISPLAY_THRESHOLD_MIN && (
         <div className="absolute top-4 right-4 z-50 bg-black bg-opacity-70 rounded-full p-2 text-white text-xs">
           Caching {cacheProgress}%
         </div>
