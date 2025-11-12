@@ -78,7 +78,7 @@ const TikTokApp = ({ creator = null }) => {
     if (container && !isDragging) {
       container.style.transition = 'transform 0.3s ease-out';
       const offset = -currentIndex * 100;
-      container.style.transform = `translateY(${offset}vh)`;
+      container.style.transform = `translate3d(0, ${offset}vh, 0)`;
     }
   }, [containerRef, currentIndex, isDragging]);
 
