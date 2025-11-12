@@ -117,8 +117,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
       if (!visibleIndices.includes(videoIndex) && video) {
         video.pause();
         video.currentTime = 0;
-        // Remove from refs to free memory
-        delete videoRefs.current[videoIndex];
+        // Don't clear src - keep the cached blob URL so it loads instantly when scrolling back
       }
     });
   }, [visibleIndices, enableVirtualScrolling]);
