@@ -6,7 +6,8 @@ const VideoPlayer = ({
   onTimeUpdate,
   getCachedVideoUrl,
   onSpeedStart,
-  onSpeedEnd
+  onSpeedEnd,
+  isMuted
 }) => {
   // Detect if device is iPad
   const isIPad = /iPad|Mac/.test(navigator.userAgent) && !window.MSStream;
@@ -25,7 +26,7 @@ const VideoPlayer = ({
         src={getCachedVideoUrl(video.videoSrc)}
         playsInline
         preload="none"
-        muted={true}
+        muted={isMuted}
         loop
         onTimeUpdate={(e) => onTimeUpdate(video.id, e.target.currentTime, e.target.duration)}
       />

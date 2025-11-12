@@ -19,6 +19,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
+  const [isMuted, setIsMuted] = useState(true);
 
   // Filter videos by creator if specified
   const filteredVideos = creator
@@ -140,6 +141,11 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
     }));
   };
 
+  // Handle unmuting when first video plays
+  const handleUnmute = () => {
+    setIsMuted(false);
+  };
+
   return (
     <div className="w-full overflow-hidden bg-black relative" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       {/* Small cache progress indicator */}
@@ -186,6 +192,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
                 getCachedVideoUrl={getCachedVideoUrl}
                 onSpeedStart={actualIndex === currentIndex ? handleSpeedStart : undefined}
                 onSpeedEnd={actualIndex === currentIndex ? handleSpeedEnd : undefined}
+                isMuted={isMuted}
               />
 
               <VideoOverlay
@@ -195,6 +202,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
                 currentIndex={currentIndex}
                 onTogglePlay={togglePlayPause}
                 videoRef={{ current: videoRefs.current[actualIndex] }}
+                onUnmute={handleUnmute}
               />
 
               <ProgressBar progress={videoProgress[video.id] || 0} />

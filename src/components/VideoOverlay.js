@@ -1,9 +1,9 @@
-const VideoOverlay = ({ isPaused, hasStarted, index, currentIndex, onTogglePlay, videoRef }) => {
+const VideoOverlay = ({ isPaused, hasStarted, index, currentIndex, onTogglePlay, videoRef, onUnmute }) => {
   const handleClick = () => {
     if (index === currentIndex) {
       // Unmute on first play
-      if (!hasStarted && videoRef?.current) {
-        videoRef.current.muted = false;
+      if (!hasStarted) {
+        onUnmute();
       }
       onTogglePlay(index);
     }
