@@ -13,6 +13,16 @@ const VideoOverlay = ({ isPaused, hasStarted, index, currentIndex, onTogglePlay,
   return (
     <div
       className="absolute inset-0 flex items-center justify-center"
+      style={{
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        paddingTop: 'max(0px, env(safe-area-inset-top))',
+        paddingLeft: 'max(0px, env(safe-area-inset-left))',
+        paddingRight: 'max(0px, env(safe-area-inset-right))',
+        paddingBottom: 'max(0px, env(safe-area-inset-bottom))'
+      }}
       onClick={handleClick}
     >
       {(isPaused || (!hasStarted && index === currentIndex)) && (
