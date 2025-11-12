@@ -18,7 +18,6 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
-  const [isMuted, setIsMuted] = useState(true);
 
   // Filter videos by creator if specified
   const filteredVideos = creator
@@ -140,18 +139,6 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
     }));
   };
 
-
-  const handleToggleMute = () => {
-    const newMutedState = !isMuted;
-    setIsMuted(newMutedState);
-    // Apply mute state to all videos immediately
-    Object.values(videoRefs.current).forEach(video => {
-      if (video) {
-        video.muted = newMutedState;
-      }
-    });
-  };
-
   return (
     <div className="w-full overflow-hidden bg-black relative" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       {/* Small cache progress indicator */}
@@ -198,8 +185,6 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
                 getCachedVideoUrl={getCachedVideoUrl}
                 onSpeedStart={actualIndex === currentIndex ? handleSpeedStart : undefined}
                 onSpeedEnd={actualIndex === currentIndex ? handleSpeedEnd : undefined}
-                isMuted={isMuted}
-                onToggleMute={actualIndex === currentIndex ? handleToggleMute : undefined}
               />
 
               <VideoOverlay
@@ -208,8 +193,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
                 index={actualIndex}
                 currentIndex={currentIndex}
                 onTogglePlay={togglePlayPause}
-                isMuted={isMuted}
-                onToggleMute={actualIndex === currentIndex ? handleToggleMute : undefined}
+                videoRef={{ current: videoRefs.current[actualIndex] }}
               />
 
               <ProgressBar progress={videoProgress[video.id] || 0} />
