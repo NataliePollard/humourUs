@@ -82,6 +82,21 @@ const TikTokApp = ({ creator = null }) => {
     }
   }, [containerRef, currentIndex, isDragging]);
 
+  // Pause off-screen videos to reduce CPU usage
+  useEffect(() => {
+    Object.entries(videoRefs.current).forEach(([index, video]) => {
+      if (video) {
+        const videoIndex = parseInt(index, 10);
+        // Pause videos that are not the current or adjacent videos
+        if (Math.abs(videoIndex - currentIndex) > 1) {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      }
+    });
+  }, [currentIndex]);
+
   // Handle like button
   const handleLike = (videoId) => {
     vibrate();
