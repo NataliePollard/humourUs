@@ -107,6 +107,22 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
     });
   }, [currentIndex, videoRefs]);
 
+  // Cleanup videos that are no longer in the visible buffer (virtual scrolling)
+  useEffect(() => {
+    if (!enableVirtualScrolling) return;
+
+    Object.entries(videoRefs.current).forEach(([index, video]) => {
+      const videoIndex = parseInt(index, 10);
+      // If video is outside visible buffer, properly stop it
+      if (!visibleIndices.includes(videoIndex) && video) {
+        video.pause();
+        video.currentTime = 0;
+        // Remove from refs to free memory
+        delete videoRefs.current[videoIndex];
+      }
+    });
+  }, [visibleIndices, enableVirtualScrolling]);
+
   // Handle like button
   const handleLike = (videoId) => {
     vibrate();
