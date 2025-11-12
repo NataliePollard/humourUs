@@ -34,7 +34,7 @@ const StandaloneMenu = () => {
       </div>
 
       <button
-        onClick={() => handleCreatorSelect('/')}
+        onClick={() => handleCreatorSelect('/all')}
         className="bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg p-8 transform transition-transform duration-200 hover:scale-105 active:scale-95 w-full max-w-xs"
       >
         <span className="text-white text-3xl font-bold">All</span>

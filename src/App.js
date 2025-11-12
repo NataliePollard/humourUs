@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import TikTokApp from './TikTokApp';
 import SplashScreen from './components/SplashScreen';
 import StandaloneMenu from './components/StandaloneMenu';
@@ -23,8 +23,14 @@ const App = () => {
     return (
       <Router>
         <Routes>
-          {/* Show menu at root */}
-          <Route path="/" element={<StandaloneMenu />} />
+          {/* Redirect root to menu in standalone mode */}
+          <Route path="/" element={<Navigate to="/menu" replace />} />
+
+          {/* Show menu at /menu */}
+          <Route path="/menu" element={<StandaloneMenu />} />
+
+          {/* All videos route */}
+          <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp /></>} />
 
           {/* Individual creator routes */}
           <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" /></>} />

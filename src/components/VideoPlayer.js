@@ -10,11 +10,20 @@ const VideoPlayer = ({
   isMuted,
   onToggleMute
 }) => {
+  // Detect if device is iPad
+  const isIPad = /iPad|Mac/.test(navigator.userAgent) && !window.MSStream;
+
+  // Determine object-fit based on device and maintainAspectRatio flag
+  const objectFit = video.maintainAspectRatio && isIPad ? 'contain' : 'cover';
+
   return (
     <>
       <video
         ref={videoRef}
-        className={`absolute inset-0 w-full h-full ${video.maintainAspectRatio ? 'object-contain' : 'object-cover'}`}
+        className={`absolute inset-0 w-full h-full object-${objectFit}`}
+        style={{
+          objectPosition: 'center'
+        }}
         src={getCachedVideoUrl(video.videoSrc)}
         playsInline
         preload="none"
