@@ -29,8 +29,8 @@ const App = () => {
           {/* Show menu at /menu */}
           <Route path="/menu" element={<StandaloneMenu />} />
 
-          {/* All videos route */}
-          <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp /></>} />
+          {/* All videos route with virtual scrolling */}
+          <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp enableVirtualScrolling={true} /></>} />
 
           {/* Individual creator routes */}
           <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" /></>} />
