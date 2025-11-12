@@ -1,15 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TikTokApp from './TikTokApp';
 import SplashScreen from './components/SplashScreen';
+import StandaloneMenu from './components/StandaloneMenu';
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const [isStandalone, setIsStandalone] = useState(false);
+
+  useEffect(() => {
+    // Check if app is running in standalone mode
+    const standalone = window.matchMedia('(display-mode: standalone)').matches;
+    setIsStandalone(standalone);
+  }, []);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
   };
 
+  // If standalone mode and not on a specific creator route, show menu
+  if (isStandalone) {
+    return (
+      <Router>
+        <Routes>
+          {/* Show menu at root */}
+          <Route path="/" element={<StandaloneMenu />} />
+
+          {/* Individual creator routes */}
+          <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" /></>} />
+          <Route path="/sang" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="sang" /></>} />
+          <Route path="/mel" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="mel" /></>} />
+          <Route path="/flem" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="flem" /></>} />
+        </Routes>
+      </Router>
+    );
+  }
+
+  // Normal mode - show splash then app
   return (
     <>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
