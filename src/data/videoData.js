@@ -62,7 +62,7 @@ export const originalVideos = [
     description: "Description placeholder\nCole - Elixir.mp4",
     likes: 567,
     saves: 198,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 1, likes: 76 },
       { user: "user2", text: "Comment placeholder", profilePic: "🌟", daysAgo: 2, likes: 54 },
@@ -76,7 +76,7 @@ export const originalVideos = [
     description: "Description placeholder\nCole - Opal Appearance Update.mp4",
     likes: 645,
     saves: 234,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 1, likes: 91 },
       { user: "user2", text: "Comment placeholder", profilePic: "👑", daysAgo: 2, likes: 78 },
@@ -90,7 +90,7 @@ export const originalVideos = [
     description: "Description placeholder\nCole - Opal Supplements.mp4",
     likes: 589,
     saves: 212,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "💊", daysAgo: 1, likes: 83 },
       { user: "user2", text: "Comment placeholder", profilePic: "🧪", daysAgo: 2, likes: 69 },
@@ -104,7 +104,7 @@ export const originalVideos = [
     description: "Description placeholder\nCole - Tiktok1.mp4",
     likes: 612,
     saves: 213,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🎭", daysAgo: 2, likes: 78 },
       { user: "user2", text: "Comment placeholder", profilePic: "🎪", daysAgo: 1, likes: 92 },
@@ -132,7 +132,7 @@ export const originalVideos = [
     description: "Description placeholder\nCole Hammer Swing_2.mp4",
     likes: 723,
     saves: 267,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🛠️", daysAgo: 1, likes: 105 },
       { user: "user2", text: "Comment placeholder", profilePic: "👷", daysAgo: 2, likes: 87 },
@@ -203,7 +203,7 @@ export const originalVideos = [
     description: "Description placeholder\nFlem - Tiktok3.mp4",
     likes: 456,
     saves: 167,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🌿", daysAgo: 1, likes: 67 },
       { user: "user2", text: "Comment placeholder", profilePic: "🍃", daysAgo: 2, likes: 54 },
@@ -457,7 +457,7 @@ export const originalVideos = [
     description: "Description placeholder\nMel Conspiracy Rant.mp4",
     likes: 934,
     saves: 401,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🤔", daysAgo: 1, likes: 145 },
       { user: "user2", text: "Comment placeholder", profilePic: "💡", daysAgo: 2, likes: 89 },
@@ -670,7 +670,7 @@ export const originalVideos = [
     description: "Description placeholder\nSang Vampires.mp4",
     likes: 734,
     saves: 267,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🧛", daysAgo: 2, likes: 104 },
       { user: "user2", text: "Comment placeholder", profilePic: "🧛‍♀️", daysAgo: 1, likes: 88 },
