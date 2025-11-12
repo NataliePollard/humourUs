@@ -118,7 +118,7 @@ export const originalVideos = [
     description: "Description placeholder\nCole - Tiktok4.mp4",
     likes: 534,
     saves: 201,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🎬", daysAgo: 1, likes: 82 },
       { user: "user2", text: "Comment placeholder", profilePic: "📹", daysAgo: 2, likes: 69 },
@@ -189,7 +189,7 @@ export const originalVideos = [
     description: "Description placeholder\nFlem - Tiktok1.mp4",
     likes: 534,
     saves: 201,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "📚", daysAgo: 1, likes: 89 },
       { user: "user2", text: "Comment placeholder", profilePic: "👨‍🏫", daysAgo: 2, likes: 72 },

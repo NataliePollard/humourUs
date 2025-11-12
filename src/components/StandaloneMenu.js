@@ -18,9 +18,10 @@ const StandaloneMenu = () => {
     <div className="w-full h-screen bg-black flex flex-col items-center justify-center p-4">
       <div className="text-white text-center mb-12">
         <h1 className="text-5xl font-bold mb-2">HumourTok</h1>
+        <p className="text-gray-400 text-lg">iPad set up</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 w-full max-w-md">
+      <div className="grid grid-cols-2 gap-6 w-full max-w-md mb-6">
         {creators.map((creator) => (
           <button
             key={creator.name}
@@ -31,6 +32,13 @@ const StandaloneMenu = () => {
           </button>
         ))}
       </div>
+
+      <button
+        onClick={() => handleCreatorSelect('/')}
+        className="bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg p-8 transform transition-transform duration-200 hover:scale-105 active:scale-95 w-full max-w-xs"
+      >
+        <span className="text-white text-3xl font-bold">All</span>
+      </button>
     </div>
   );
 };
