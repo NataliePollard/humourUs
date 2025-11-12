@@ -356,7 +356,7 @@ export const originalVideos = [
     description: "Description placeholder\nFlem - So Dry.mp4",
     likes: 478,
     saves: 172,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "💧", daysAgo: 1, likes: 54 },
       { user: "user2", text: "Comment placeholder", profilePic: "😩", daysAgo: 2, likes: 39 },
@@ -454,7 +454,7 @@ export const originalVideos = [
     description: "Description placeholder\nMel - Conspiracy Rant.mp4",
     likes: 645,
     saves: 234,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "👁️", daysAgo: 1, likes: 81 },
       { user: "user2", text: "Comment placeholder", profilePic: "🔍", daysAgo: 2, likes: 68 },

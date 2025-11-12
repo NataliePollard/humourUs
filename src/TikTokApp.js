@@ -95,7 +95,7 @@ const TikTokApp = ({ creator = null }) => {
         }
       }
     });
-  }, [currentIndex]);
+  }, [currentIndex, videoRefs]);
 
   // Handle like button
   const handleLike = (videoId) => {
