@@ -112,6 +112,30 @@ const TikTokApp = ({ creator = null }) => {
     });
   };
 
+  // Calculate which videos should be rendered (current ±5 videos)
+  const RENDER_RANGE = 5;
+  const shouldRenderVideo = (index) => {
+    return Math.abs(index - currentIndex) <= RENDER_RANGE;
+  };
+
+  // Cleanup refs for videos outside render range
+  useEffect(() => {
+    Object.keys(videoRefs.current).forEach((key) => {
+      const index = parseInt(key, 10);
+      if (!shouldRenderVideo(index)) {
+        // Pause and cleanup video before removing ref
+        const video = videoRefs.current[index];
+        if (video) {
+          video.pause();
+          video.src = '';
+          video.load();
+        }
+        delete videoRefs.current[index];
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
   return (
     <div className="w-full overflow-hidden bg-black relative" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       {/* Small cache progress indicator */}
@@ -134,7 +158,7 @@ const TikTokApp = ({ creator = null }) => {
         onMouseLeave={handleEnd}
         style={{ transform: `translateY(-${currentIndex * 100}vh)`, height: '100%' }}
       >
-        {videos.map((video, index) => (
+        {videos.map((video, index) => shouldRenderVideo(index) && (
           <div
             key={`${video.id}-${Math.floor(index / originalVideos.length)}`}
             className="h-screen w-full relative bg-black"
