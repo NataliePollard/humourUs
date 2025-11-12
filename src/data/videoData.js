@@ -174,7 +174,7 @@ export const originalVideos = [
     description: "Description placeholder\nCole - Work of art.mp4",
     likes: 612,
     saves: 226,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🎨", daysAgo: 1, likes: 78 },
       { user: "user2", text: "Comment placeholder", profilePic: "🖼️", daysAgo: 2, likes: 62 },
@@ -300,7 +300,7 @@ export const originalVideos = [
     description: "Description placeholder\nFlem - OnlyFlems.mp4",
     likes: 645,
     saves: 234,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "👑", daysAgo: 1, likes: 88 },
       { user: "user2", text: "Comment placeholder", profilePic: "💎", daysAgo: 2, likes: 71 },
@@ -328,7 +328,7 @@ export const originalVideos = [
     description: "Description placeholder\nFlem - Skincare Ad.mp4",
     likes: 612,
     saves: 223,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "💅", daysAgo: 1, likes: 79 },
       { user: "user2", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 62 },
@@ -384,7 +384,7 @@ export const originalVideos = [
     description: "Description placeholder\nMel - All You Need is Blood.mp4",
     likes: 589,
     saves: 216,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🩸", daysAgo: 1, likes: 73 },
       { user: "user2", text: "Comment placeholder", profilePic: "💋", daysAgo: 2, likes: 59 },
@@ -818,7 +818,7 @@ export const originalVideos = [
     description: "Description placeholder\nSang - Vampires.mp4",
     likes: 645,
     saves: 234,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🧛", daysAgo: 1, likes: 83 },
       { user: "user2", text: "Comment placeholder", profilePic: "🩸", daysAgo: 2, likes: 68 },
