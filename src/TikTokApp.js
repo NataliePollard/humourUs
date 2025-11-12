@@ -138,7 +138,11 @@ const TikTokApp = ({ creator = null }) => {
           <div
             key={`${video.id}-${Math.floor(index / originalVideos.length)}`}
             className="h-screen w-full relative bg-black"
-            style={{ height: '100vh' }}
+            style={{
+              height: '100vh',
+              contain: 'layout style paint',
+              willChange: index === currentIndex ? 'transform' : 'auto'
+            }}
           >
             <VideoPlayer
               video={video}
