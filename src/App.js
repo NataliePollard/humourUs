@@ -9,9 +9,10 @@ const App = () => {
   const [isStandalone, setIsStandalone] = useState(false);
 
   useEffect(() => {
-    // Check if app is running in standalone mode
+    // Check if app is running in standalone mode on iPad
     const standalone = window.matchMedia('(display-mode: standalone)').matches;
-    setIsStandalone(standalone);
+    const isIPad = /iPad|Mac/.test(navigator.userAgent) && !window.MSStream;
+    setIsStandalone(standalone && isIPad);
   }, []);
 
   const handleSplashComplete = () => {
