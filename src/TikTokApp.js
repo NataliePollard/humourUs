@@ -92,13 +92,11 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
     const container = containerRef.current;
     if (container && !isDragging) {
       container.style.transition = `transform ${ANIMATION_DURATIONS.SCROLL_TRANSITION}ms ease-out`;
-      const offset = enableVirtualScrolling
-        ? -(currentIndex - visibleIndices[0]) * 100
-        : -currentIndex * 100;
+      const offset = -currentIndex * 100;
       container.style.transform = `translate3d(0, ${offset}vh, 0)`;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [containerRef, currentIndex, isDragging, enableVirtualScrolling, visibleIndices]);
+  }, [containerRef, currentIndex, isDragging]);
 
   // Pause off-screen videos to reduce CPU usage
   useEffect(() => {
@@ -175,6 +173,9 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
         onMouseUp={handleEnd}
         onMouseLeave={handleEnd}
         style={{
+          transform: enableVirtualScrolling
+            ? `translateY(-${(currentIndex - visibleIndices[0]) * 100}vh)`
+            : `translateY(-${currentIndex * 100}vh)`,
           height: '100%'
         }}
       >
