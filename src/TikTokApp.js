@@ -47,6 +47,15 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
 
   const { cacheProgress, getCachedVideoUrl } = useVideoCaching(creator);
 
+  // Virtual scrolling: determine which videos to render
+  const visibleIndices = enableVirtualScrolling
+    ? (() => {
+        const start = Math.max(0, currentIndex - VIRTUAL_SCROLLING.RENDER_BUFFER);
+        const end = Math.min(videos.length, currentIndex + VIRTUAL_SCROLLING.RENDER_BUFFER + 1);
+        return Array.from({ length: end - start }, (_, i) => start + i);
+      })()
+    : videos.map((_, i) => i);
+
   const handleNavigation = (direction) => {
     let newIndex = currentIndex + direction;
 
@@ -70,15 +79,6 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
   const { handleSpeedStart, handleSpeedEnd } = useSpeedControl(
     { current: videoRefs.current[currentIndex] }
   );
-
-  // Virtual scrolling: determine which videos to render
-  const visibleIndices = enableVirtualScrolling
-    ? (() => {
-        const start = Math.max(0, currentIndex - VIRTUAL_SCROLLING.RENDER_BUFFER);
-        const end = Math.min(videos.length, currentIndex + VIRTUAL_SCROLLING.RENDER_BUFFER + 1);
-        return Array.from({ length: end - start }, (_, i) => start + i);
-      })()
-    : videos.map((_, i) => i);
 
   // Add viewport height fix for mobile
   useEffect(() => {
