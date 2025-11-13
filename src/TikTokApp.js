@@ -64,7 +64,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
     setSavedVideos({});
   };
 
-  const { isDragging, containerRef, handleStart, handleMove, handleEnd } = useGestureHandling(handleNavigation, currentIndex);
+  const { isDragging, containerRef, handleStart, handleMove, handleEnd } = useGestureHandling(handleNavigation, currentIndex, enableVirtualScrolling, visibleIndices);
 
   // Speed control for current video
   const { handleSpeedStart, handleSpeedEnd } = useSpeedControl(

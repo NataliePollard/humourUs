@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { GESTURE_CONFIG, VIEWPORT } from '../constants/appConstants';
 
-export const useGestureHandling = (onNavigate, currentIndex) => {
+export const useGestureHandling = (onNavigate, currentIndex, enableVirtualScrolling = false, visibleIndices = []) => {
   const [startY, setStartY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
@@ -19,7 +19,14 @@ export const useGestureHandling = (onNavigate, currentIndex) => {
     const diffY = startY - clientY;
 
     if (containerRef.current) {
-      const offset = -currentIndex * VIEWPORT.UNIT - (diffY / window.innerHeight) * VIEWPORT.UNIT;
+      let offset;
+      if (enableVirtualScrolling) {
+        const baseOffset = (currentIndex - visibleIndices[0]) * VIEWPORT.UNIT;
+        const dragOffset = (diffY / window.innerHeight) * VIEWPORT.UNIT;
+        offset = -baseOffset - dragOffset;
+      } else {
+        offset = -currentIndex * VIEWPORT.UNIT - (diffY / window.innerHeight) * VIEWPORT.UNIT;
+      }
       containerRef.current.style.transform = `translateY(${offset}vh)`;
     }
   };
