@@ -148,9 +148,15 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
     }));
   };
 
-  // Handle unmuting when first video plays
-  const handleUnmute = () => {
-    setIsMuted(false);
+  const handleToggleMute = () => {
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    // Apply mute state to all videos immediately
+    Object.values(videoRefs.current).forEach(video => {
+      if (video) {
+        video.muted = newMutedState;
+      }
+    });
   };
 
   return (
@@ -208,8 +214,8 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
                 index={actualIndex}
                 currentIndex={currentIndex}
                 onTogglePlay={togglePlayPause}
-                videoRef={{ current: videoRefs.current[actualIndex] }}
-                onUnmute={handleUnmute}
+                isMuted={isMuted}
+                onToggleMute={actualIndex === currentIndex ? handleToggleMute : undefined}
               />
 
               <ProgressBar progress={videoProgress[video.id] || 0} />
