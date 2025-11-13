@@ -29,7 +29,7 @@ export const originalVideos = [
   },
   {
     id: 3,
-    videoSrc: "/videos/Cole - Death Consipracy Real.mp4",
+    videoSrc: "/videos/Cole - Death Conspiracy Real.mp4",
     username: "cole",
     description: "Description placeholder\nCole - Death Consipracy Real.mp4",
     likes: 567,
