@@ -30,14 +30,14 @@ const App = () => {
           {/* Show menu at /menu */}
           <Route path="/menu" element={<StandaloneMenu />} />
 
-          {/* All videos route with virtual scrolling */}
-          <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
+          {/* All videos route */}
+          <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp isStandalone={isStandalone} /></>} />
 
-          {/* Individual creator routes with virtual scrolling */}
-          <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
-          <Route path="/sang" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="sang" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
-          <Route path="/mel" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="mel" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
-          <Route path="/flem" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="flem" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
+          {/* Individual creator routes */}
+          <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" isStandalone={isStandalone} /></>} />
+          <Route path="/sang" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="sang" isStandalone={isStandalone} /></>} />
+          <Route path="/mel" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="mel" isStandalone={isStandalone} /></>} />
+          <Route path="/flem" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="flem" isStandalone={isStandalone} /></>} />
         </Routes>
       </Router>
     );
@@ -49,14 +49,14 @@ const App = () => {
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <Router>
         <Routes>
-          {/* Home/All videos route with virtual scrolling */}
-          <Route path="/" element={<TikTokApp enableVirtualScrolling={true} />} />
+          {/* Home/All videos route */}
+          <Route path="/" element={<TikTokApp />} />
 
-          {/* Individual creator routes with virtual scrolling */}
-          <Route path="/cole" element={<TikTokApp creator="cole" enableVirtualScrolling={true} />} />
-          <Route path="/sang" element={<TikTokApp creator="sang" enableVirtualScrolling={true} />} />
-          <Route path="/mel" element={<TikTokApp creator="mel" enableVirtualScrolling={true} />} />
-          <Route path="/flem" element={<TikTokApp creator="flem" enableVirtualScrolling={true} />} />
+          {/* Individual creator routes */}
+          <Route path="/cole" element={<TikTokApp creator="cole" />} />
+          <Route path="/sang" element={<TikTokApp creator="sang" />} />
+          <Route path="/mel" element={<TikTokApp creator="mel" />} />
+          <Route path="/flem" element={<TikTokApp creator="flem" />} />
         </Routes>
       </Router>
     </>
