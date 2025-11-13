@@ -54,7 +54,8 @@ export const useVideoPlayer = (videos) => {
         });
       }
     }
-  }, [currentIndex, hasStarted, isPaused]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, hasStarted]);
 
   const togglePlayPause = async (index) => {
     const video = videoRefs.current[index];
