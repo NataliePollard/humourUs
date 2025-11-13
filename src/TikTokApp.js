@@ -123,7 +123,8 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
       if (!visibleIndices.includes(videoIndex) && video) {
         video.pause();
         video.currentTime = 0;
-        // Don't clear src - keep the cached blob URL so it loads instantly when scrolling back
+        // Remove from refs to free memory
+        delete videoRefs.current[videoIndex];
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
