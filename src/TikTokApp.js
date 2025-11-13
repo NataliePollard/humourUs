@@ -126,6 +126,7 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
         // Don't clear src - keep the cached blob URL so it loads instantly when scrolling back
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visibleIndices, enableVirtualScrolling]);
 
   // Handle like button
