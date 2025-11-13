@@ -175,9 +175,6 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
         onMouseUp={handleEnd}
         onMouseLeave={handleEnd}
         style={{
-          transform: enableVirtualScrolling
-            ? `translateY(-${(currentIndex - visibleIndices[0]) * 100}vh)`
-            : `translateY(-${currentIndex * 100}vh)`,
           height: '100%'
         }}
       >
