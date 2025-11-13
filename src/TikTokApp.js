@@ -173,22 +173,19 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
         onMouseUp={handleEnd}
         onMouseLeave={handleEnd}
         style={{
-          transform: `translateY(-${currentIndex * 100}vh)`,
+          transform: enableVirtualScrolling
+            ? `translateY(-${(currentIndex - visibleIndices[0]) * 100}vh)`
+            : `translateY(-${currentIndex * 100}vh)`,
           height: '100%'
         }}
       >
         {(enableVirtualScrolling ? visibleIndices.map(i => videos[i]) : videos).map((video, renderIndex) => {
           const actualIndex = enableVirtualScrolling ? visibleIndices[renderIndex] : renderIndex;
-          // For virtual scrolling, offset the visual position to account for only rendering a subset
-          const visualOffset = enableVirtualScrolling ? -(visibleIndices[0] * 100) : 0;
           return (
             <div
               key={`${video.id}-${Math.floor(actualIndex / originalVideos.length)}`}
               className="h-screen w-full relative bg-black"
-              style={{
-                height: '100vh',
-                transform: enableVirtualScrolling ? `translateY(${visualOffset}vh)` : 'none'
-              }}
+              style={{ height: '100vh' }}
             >
               <VideoPlayer
                 video={video}
