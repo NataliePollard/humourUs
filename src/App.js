@@ -31,13 +31,13 @@ const App = () => {
           <Route path="/menu" element={<StandaloneMenu />} />
 
           {/* All videos route with virtual scrolling */}
-          <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp enableVirtualScrolling={true} /></>} />
+          <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
 
           {/* Individual creator routes with virtual scrolling */}
-          <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" enableVirtualScrolling={true} /></>} />
-          <Route path="/sang" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="sang" enableVirtualScrolling={true} /></>} />
-          <Route path="/mel" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="mel" enableVirtualScrolling={true} /></>} />
-          <Route path="/flem" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="flem" enableVirtualScrolling={true} /></>} />
+          <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
+          <Route path="/sang" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="sang" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
+          <Route path="/mel" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="mel" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
+          <Route path="/flem" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="flem" enableVirtualScrolling={true} isStandalone={isStandalone} /></>} />
         </Routes>
       </Router>
     );

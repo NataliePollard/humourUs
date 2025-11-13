@@ -651,6 +651,7 @@ export const originalVideos = [
     likes: 589,
     saves: 216,
     maintainAspectRatio: true,
+    hideFromMobile: true,
     comments: [
       { user: "user1", text: "Comment placeholder", profilePic: "🩸", daysAgo: 1, likes: 73 },
       { user: "user2", text: "Comment placeholder", profilePic: "💋", daysAgo: 2, likes: 59 },

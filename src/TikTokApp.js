@@ -15,16 +15,21 @@ import { VIRTUAL_SCROLLING, CACHE_CONFIG, ANIMATION_DURATIONS } from './constant
 const VideoSidebar = lazy(() => import('./components/VideoSidebar'));
 const CommentsModal = lazy(() => import('./components/CommentsModal'));
 
-const TikTokApp = ({ creator = null, enableVirtualScrolling = false }) => {
+const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalone = false }) => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
   const [isMuted, setIsMuted] = useState(true);
 
   // Filter videos by creator if specified
-  const filteredVideos = creator
+  let filteredVideos = creator
     ? originalVideos.filter(video => video.username === creator.toLowerCase())
     : originalVideos;
+
+  // Filter out hideFromMobile videos if not in standalone mode
+  if (!isStandalone) {
+    filteredVideos = filteredVideos.filter(video => !video.hideFromMobile);
+  }
 
   const videos = filteredVideos;
 
