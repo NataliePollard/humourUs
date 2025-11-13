@@ -379,9 +379,9 @@ export const originalVideos = [
   },
   {
     id: 28,
-    videoSrc: "/videos/Mel - All You Need is Blood.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - All You Need is Blood.mp4",
+    videoSrc: "/videos/Sang - All You Need is Blood.mp4",
+    username: "sang",
+    description: "Description placeholder\nSang - All You Need is Blood.mp4",
     likes: 589,
     saves: 216,
     maintainAspectRatio: true,
@@ -837,6 +837,34 @@ export const originalVideos = [
       { user: "user1", text: "Comment placeholder", profilePic: "💪", daysAgo: 1, likes: 71 },
       { user: "user2", text: "Comment placeholder", profilePic: "😠", daysAgo: 2, likes: 56 },
       { user: "user3", text: "Comment placeholder", profilePic: "🏋️", daysAgo: 2, likes: 63 }
+    ]
+  },
+  {
+    id: 61,
+    videoSrc: "/videos/Cole - But what about codpiece.mp4",
+    username: "cole",
+    description: "Description placeholder\nCole - But what about codpiece.mp4",
+    likes: 534,
+    saves: 192,
+    maintainAspectRatio: false,
+    comments: [
+      { user: "user1", text: "Comment placeholder", profilePic: "😂", daysAgo: 1, likes: 89 },
+      { user: "user2", text: "Comment placeholder", profilePic: "🤣", daysAgo: 2, likes: 74 },
+      { user: "user3", text: "Comment placeholder", profilePic: "💀", daysAgo: 2, likes: 81 }
+    ]
+  },
+  {
+    id: 62,
+    videoSrc: "/videos/Flem - Skincare Routine.mp4",
+    username: "flem",
+    description: "Description placeholder\nFlem - Skincare Routine.mp4",
+    likes: 612,
+    saves: 228,
+    maintainAspectRatio: true,
+    comments: [
+      { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 1, likes: 95 },
+      { user: "user2", text: "Comment placeholder", profilePic: "💆", daysAgo: 2, likes: 82 },
+      { user: "user3", text: "Comment placeholder", profilePic: "🧴", daysAgo: 2, likes: 77 }
     ]
   }
 ];
