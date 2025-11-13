@@ -9,13 +9,13 @@ import VideoInfo from './components/VideoInfo';
 import ProgressBar from './components/ProgressBar';
 import { originalVideos } from './data/videoData';
 import { setViewportHeight, vibrate } from './utils/helpers';
-import { VIRTUAL_SCROLLING, CACHE_CONFIG, ANIMATION_DURATIONS } from './constants/appConstants';
+import { CACHE_CONFIG, ANIMATION_DURATIONS } from './constants/appConstants';
 
 // Lazy load heavy components
 const VideoSidebar = lazy(() => import('./components/VideoSidebar'));
 const CommentsModal = lazy(() => import('./components/CommentsModal'));
 
-const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalone = false }) => {
+const TikTokApp = ({ creator = null, isStandalone = false }) => {
   const [showComments, setShowComments] = useState(false);
   const [likedVideos, setLikedVideos] = useState({});
   const [savedVideos, setSavedVideos] = useState({});
@@ -47,14 +47,6 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
 
   const { cacheProgress, getCachedVideoUrl } = useVideoCaching(creator);
 
-  // Virtual scrolling: determine which videos to render
-  const visibleIndices = enableVirtualScrolling
-    ? (() => {
-        const start = Math.max(0, currentIndex - VIRTUAL_SCROLLING.RENDER_BUFFER);
-        const end = Math.min(videos.length, currentIndex + VIRTUAL_SCROLLING.RENDER_BUFFER + 1);
-        return Array.from({ length: end - start }, (_, i) => start + i);
-      })()
-    : videos.map((_, i) => i);
 
   const handleNavigation = (direction) => {
     let newIndex = currentIndex + direction;
@@ -113,22 +105,6 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
     });
   }, [currentIndex, videoRefs]);
 
-  // Cleanup videos that are no longer in the visible buffer (virtual scrolling)
-  useEffect(() => {
-    if (!enableVirtualScrolling) return;
-
-    Object.entries(videoRefs.current).forEach(([index, video]) => {
-      const videoIndex = parseInt(index, 10);
-      // If video is outside visible buffer, properly stop it
-      if (!visibleIndices.includes(videoIndex) && video) {
-        video.pause();
-        video.currentTime = 0;
-        // Remove from refs to free memory
-        delete videoRefs.current[videoIndex];
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visibleIndices, enableVirtualScrolling]);
 
   // Handle like button
   const handleLike = (videoId) => {
@@ -180,42 +156,39 @@ const TikTokApp = ({ creator = null, enableVirtualScrolling = false, isStandalon
         onMouseUp={handleEnd}
         onMouseLeave={handleEnd}
         style={{
-          transform: enableVirtualScrolling
-            ? `translateY(-${(currentIndex - visibleIndices[0]) * 100}vh)`
-            : `translateY(-${currentIndex * 100}vh)`,
+          transform: `translateY(-${currentIndex * 100}vh)`,
           height: '100%'
         }}
       >
-        {(enableVirtualScrolling ? visibleIndices.map(i => videos[i]) : videos).map((video, renderIndex) => {
-          const actualIndex = enableVirtualScrolling ? visibleIndices[renderIndex] : renderIndex;
+        {videos.map((video, renderIndex) => {
           return (
             <div
-              key={`${video.id}-${Math.floor(actualIndex / originalVideos.length)}`}
+              key={`${video.id}-${renderIndex}`}
               className="h-screen w-full relative bg-black"
               style={{ height: '100vh' }}
             >
               <VideoPlayer
                 video={video}
-                index={actualIndex}
+                index={renderIndex}
                 currentIndex={currentIndex}
-                videoRef={(el) => videoRefs.current[actualIndex] = el}
+                videoRef={(el) => videoRefs.current[renderIndex] = el}
                 onTimeUpdate={(videoId, time, duration) => {
                   handleVideoProgress(videoId, time, duration);
                 }}
                 getCachedVideoUrl={getCachedVideoUrl}
-                onSpeedStart={actualIndex === currentIndex ? handleSpeedStart : undefined}
-                onSpeedEnd={actualIndex === currentIndex ? handleSpeedEnd : undefined}
+                onSpeedStart={renderIndex === currentIndex ? handleSpeedStart : undefined}
+                onSpeedEnd={renderIndex === currentIndex ? handleSpeedEnd : undefined}
                 isMuted={isMuted}
               />
 
               <VideoOverlay
-                isPaused={isPaused[actualIndex]}
+                isPaused={isPaused[renderIndex]}
                 hasStarted={hasStarted}
-                index={actualIndex}
+                index={renderIndex}
                 currentIndex={currentIndex}
                 onTogglePlay={togglePlayPause}
                 isMuted={isMuted}
-                onToggleMute={actualIndex === currentIndex ? handleToggleMute : undefined}
+                onToggleMute={renderIndex === currentIndex ? handleToggleMute : undefined}
               />
 
               <ProgressBar progress={videoProgress[video.id] || 0} />
