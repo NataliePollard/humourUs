@@ -33,11 +33,11 @@ const App = () => {
           {/* All videos route with virtual scrolling */}
           <Route path="/all" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp enableVirtualScrolling={true} /></>} />
 
-          {/* Individual creator routes */}
-          <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" /></>} />
-          <Route path="/sang" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="sang" /></>} />
-          <Route path="/mel" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="mel" /></>} />
-          <Route path="/flem" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="flem" /></>} />
+          {/* Individual creator routes with virtual scrolling */}
+          <Route path="/cole" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="cole" enableVirtualScrolling={true} /></>} />
+          <Route path="/sang" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="sang" enableVirtualScrolling={true} /></>} />
+          <Route path="/mel" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="mel" enableVirtualScrolling={true} /></>} />
+          <Route path="/flem" element={<>{showSplash && <SplashScreen onComplete={handleSplashComplete} />}<TikTokApp creator="flem" enableVirtualScrolling={true} /></>} />
         </Routes>
       </Router>
     );
@@ -49,14 +49,14 @@ const App = () => {
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <Router>
         <Routes>
-          {/* Home/All videos route */}
-          <Route path="/" element={<TikTokApp />} />
+          {/* Home/All videos route with virtual scrolling */}
+          <Route path="/" element={<TikTokApp enableVirtualScrolling={true} />} />
 
-          {/* Individual creator routes */}
-          <Route path="/cole" element={<TikTokApp creator="cole" />} />
-          <Route path="/sang" element={<TikTokApp creator="sang" />} />
-          <Route path="/mel" element={<TikTokApp creator="mel" />} />
-          <Route path="/flem" element={<TikTokApp creator="flem" />} />
+          {/* Individual creator routes with virtual scrolling */}
+          <Route path="/cole" element={<TikTokApp creator="cole" enableVirtualScrolling={true} />} />
+          <Route path="/sang" element={<TikTokApp creator="sang" enableVirtualScrolling={true} />} />
+          <Route path="/mel" element={<TikTokApp creator="mel" enableVirtualScrolling={true} />} />
+          <Route path="/flem" element={<TikTokApp creator="flem" enableVirtualScrolling={true} />} />
         </Routes>
       </Router>
     </>
