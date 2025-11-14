@@ -1,871 +1,645 @@
 export const originalVideos = [
   {
     id: 1,
-    videoSrc: "/videos/Cole - But what about codpiece.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - But what about codpiece.mp4",
-    likes: 534,
-    saves: 192,
+    videoSrc: "/videos/Sang - Scrapbook Combined.mp4",
+    username: "sang",
+    description: "",
+    likes: 512,
+    saves: 189,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "😂", daysAgo: 1, likes: 89 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🤣", daysAgo: 2, likes: 74 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💀", daysAgo: 2, likes: 81 }
-    ]
+    comments: []
   },
   {
     id: 2,
-    videoSrc: "/videos/Cole - Circus.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Circus.mp4",
-    likes: 456,
-    saves: 178,
-    maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎪", daysAgo: 2, likes: 45 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎭", daysAgo: 3, likes: 32 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🎨", daysAgo: 1, likes: 58 }
-    ]
-  },
-  {
-    id: 3,
-    videoSrc: "/videos/Cole - Death Conspiracy Real.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Death Consipracy Real.mp4",
-    likes: 567,
-    saves: 201,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🔍", daysAgo: 1, likes: 78 },
-      { user: "user2", text: "Comment placeholder", profilePic: "👀", daysAgo: 2, likes: 65 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💭", daysAgo: 2, likes: 52 }
-    ]
-  },
-  {
-    id: 4,
     videoSrc: "/videos/Cole - Elixir.mp4",
     username: "cole",
-    description: "Description placeholder\nCole - Elixir.mp4",
+    description: "Bile Elixer available for pre order now!",
     likes: 567,
     saves: 198,
     maintainAspectRatio: true,
     comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 1, likes: 76 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🌟", daysAgo: 2, likes: 54 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🔮", daysAgo: 2, likes: 43 }
+      { user: "sang", text: "💕❤️💕✨💕❤️💕!", profilePic: "/images/Sang PFP.png", daysAgo: 1, likes: 45 }
     ]
+  },
+  {
+    id: 3,
+    videoSrc: "/videos/Mel - Conspiracy Rant.mp4",
+    username: "mel",
+    description: "",
+    likes: 489,
+    saves: 167,
+    maintainAspectRatio: false,
+    comments: []
+  },
+  {
+    id: 4,
+    videoSrc: "/videos/Sang - Getting Ready Sang.mp4",
+    username: "sang",
+    description: "",
+    likes: 534,
+    saves: 192,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 5,
     videoSrc: "/videos/Cole - Erection Supplements.mp4",
     username: "cole",
-    description: "Description placeholder\nCole - Erection Supplements.mp4",
+    description: "",
     likes: 542,
     saves: 187,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🌟", daysAgo: 2, likes: 34 },
-      { user: "user2", text: "Comment placeholder", profilePic: "✨", daysAgo: 3, likes: 19 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🔮", daysAgo: 1, likes: 56 }
-    ]
+    comments: []
   },
   {
     id: 6,
-    videoSrc: "/videos/Cole - Hammer Swing.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Hammer Swing.mp4",
-    likes: 489,
-    saves: 165,
+    videoSrc: "/videos/Mel - Autumn ASMR.mp4",
+    username: "mel",
+    description: "",
+    likes: 478,
+    saves: 156,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🔨", daysAgo: 1, likes: 52 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💪", daysAgo: 2, likes: 38 },
-      { user: "user3", text: "Comment placeholder", profilePic: "⚡", daysAgo: 2, likes: 44 }
-    ]
+    comments: []
   },
   {
     id: 7,
-    videoSrc: "/videos/Cole - Just the Tip.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Just the Tip.mp4",
-    likes: 612,
-    saves: 223,
+    videoSrc: "/videos/Flem - Circus.mp4",
+    username: "flem",
+    description: "",
+    likes: 501,
+    saves: 173,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "😄", daysAgo: 1, likes: 87 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎯", daysAgo: 2, likes: 72 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💡", daysAgo: 2, likes: 58 }
-    ]
+    comments: []
   },
   {
     id: 8,
-    videoSrc: "/videos/Cole - Opal Appearance Update.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Opal Appearance Update.mp4",
-    likes: 645,
-    saves: 234,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 1, likes: 91 },
-      { user: "user2", text: "Comment placeholder", profilePic: "👑", daysAgo: 2, likes: 78 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💎", daysAgo: 2, likes: 64 }
-    ]
+    videoSrc: "/videos/Sang - Faire Leeches movie.mp4",
+    username: "sang",
+    description: "",
+    likes: 523,
+    saves: 185,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 9,
-    videoSrc: "/videos/Cole - Opal Hanky Panky.mp4",
+    videoSrc: "/videos/Cole - Hammer Swing.mp4",
     username: "cole",
-    description: "Description placeholder\nCole - Opal Hanky Panky.mp4",
-    likes: 523,
-    saves: 195,
+    description: "",
+    likes: 489,
+    saves: 165,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "😏", daysAgo: 1, likes: 63 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🤭", daysAgo: 2, likes: 48 },
-      { user: "user3", text: "Comment placeholder", profilePic: "😉", daysAgo: 2, likes: 55 }
-    ]
+    comments: []
   },
   {
     id: 10,
-    videoSrc: "/videos/Cole - Opal Mel Gift.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Opal Mel Gift.mp4",
-    likes: 598,
-    saves: 216,
+    videoSrc: "/videos/Mel - No Dancing.mp4",
+    username: "mel",
+    description: "",
+    likes: 445,
+    saves: 142,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎁", daysAgo: 1, likes: 72 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💝", daysAgo: 2, likes: 59 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🎀", daysAgo: 2, likes: 44 }
-    ]
+    comments: []
   },
   {
     id: 11,
-    videoSrc: "/videos/Cole - Opal Supplements.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Opal Supplements.mp4",
-    likes: 589,
-    saves: 212,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💊", daysAgo: 1, likes: 83 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🧪", daysAgo: 2, likes: 69 },
-      { user: "user3", text: "Comment placeholder", profilePic: "⚗️", daysAgo: 2, likes: 55 }
-    ]
+    videoSrc: "/videos/Flem - Faire Vials.mp4",
+    username: "flem",
+    description: "",
+    likes: 468,
+    saves: 158,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 12,
-    videoSrc: "/videos/Cole - Protein Powder Edit.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Protein Powder Edit.mp4",
-    likes: 678,
-    saves: 245,
+    videoSrc: "/videos/Sang - Joust.mp4",
+    username: "sang",
+    description: "",
+    likes: 556,
+    saves: 201,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💪", daysAgo: 1, likes: 82 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🏋️", daysAgo: 2, likes: 61 },
-      { user: "user3", text: "Comment placeholder", profilePic: "📊", daysAgo: 3, likes: 71 }
-    ]
+    comments: []
   },
   {
     id: 13,
-    videoSrc: "/videos/Cole - Squat.mp4",
+    videoSrc: "/videos/Cole - Death Conspiracy Real.mp4",
     username: "cole",
-    description: "Description placeholder\nCole - Squat.mp4",
-    likes: 534,
-    saves: 188,
-    maintainAspectRatio: false,
+    description: "@Mel",
+    likes: 612,
+    saves: 223,
+    maintainAspectRatio: true,
     comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🏋️", daysAgo: 1, likes: 71 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💪", daysAgo: 2, likes: 55 },
-      { user: "user3", text: "Comment placeholder", profilePic: "⚡", daysAgo: 2, likes: 48 }
+      { user: "HumoursFan69", text: "Cant believe my two favoite thought leaders are making vidoes together again😍", profilePic: "😍", daysAgo: 1, likes: 89 },
+      { user: "ConspiracyL0v3R", text: "Joe Rogan eat your heart out", profilePic: "🔍", daysAgo: 1, likes: 67 }
     ]
   },
   {
     id: 14,
-    videoSrc: "/videos/Cole - Work of art.mp4",
-    username: "cole",
-    description: "Description placeholder\nCole - Work of art.mp4",
-    likes: 612,
-    saves: 226,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎨", daysAgo: 1, likes: 78 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🖼️", daysAgo: 2, likes: 62 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 54 }
-    ]
+    videoSrc: "/videos/Mel - Intervention.mp4",
+    username: "mel",
+    description: "",
+    likes: 523,
+    saves: 189,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 15,
-    videoSrc: "/videos/Flem - Behind the scene.mp4",
+    videoSrc: "/videos/Flem - How to Blink.mp4",
     username: "flem",
-    description: "Description placeholder\nFlem - Behind the scene.mp4",
-    likes: 467,
-    saves: 172,
+    description: "",
+    likes: 445,
+    saves: 152,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎬", daysAgo: 1, likes: 54 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎥", daysAgo: 2, likes: 41 },
-      { user: "user3", text: "Comment placeholder", profilePic: "📹", daysAgo: 2, likes: 48 }
-    ]
+    comments: []
   },
   {
     id: 16,
-    videoSrc: "/videos/Flem - Circus.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Circus.mp4",
-    likes: 523,
-    saves: 195,
+    videoSrc: "/videos/Sang - Workout Vlog Argument.mp4",
+    username: "sang",
+    description: "",
+    likes: 578,
+    saves: 211,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎪", daysAgo: 1, likes: 62 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎭", daysAgo: 2, likes: 48 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🎨", daysAgo: 2, likes: 55 }
-    ]
+    comments: []
   },
   {
     id: 17,
-    videoSrc: "/videos/Flem - Diagram.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Diagram.mp4",
-    likes: 589,
-    saves: 212,
+    videoSrc: "/videos/Cole - Squat.mp4",
+    username: "cole",
+    description: "",
+    likes: 534,
+    saves: 195,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "📊", daysAgo: 1, likes: 67 },
-      { user: "user2", text: "Comment placeholder", profilePic: "📈", daysAgo: 2, likes: 53 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🔢", daysAgo: 2, likes: 59 }
-    ]
+    comments: []
   },
   {
     id: 18,
-    videoSrc: "/videos/Flem - Flemdiagram Follow-up.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Flemdiagram Follow-up.mp4",
-    likes: 512,
-    saves: 189,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "📊", daysAgo: 1, likes: 58 },
-      { user: "user2", text: "Comment placeholder", profilePic: "📝", daysAgo: 2, likes: 44 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✏️", daysAgo: 2, likes: 51 }
-    ]
+    videoSrc: "/videos/Mel - Bread.mp4",
+    username: "mel",
+    description: "",
+    likes: 489,
+    saves: 167,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 19,
-    videoSrc: "/videos/Flem - Handkerchief.mp4",
+    videoSrc: "/videos/Flem - Yoga Bali.mp4",
     username: "flem",
-    description: "Description placeholder\nFlem - Handkerchief.mp4",
-    likes: 445,
-    saves: 156,
+    description: "",
+    likes: 501,
+    saves: 178,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🧣", daysAgo: 1, likes: 42 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎀", daysAgo: 2, likes: 33 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 38 }
-    ]
+    comments: []
   },
   {
     id: 20,
-    videoSrc: "/videos/Flem - How to Blink.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - How to Blink.mp4",
-    likes: 678,
-    saves: 245,
+    videoSrc: "/videos/Sang - Baby  Blood Blush.mp4",
+    username: "sang",
+    description: "",
+    likes: 512,
+    saves: 186,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "👁️", daysAgo: 1, likes: 81 },
-      { user: "user2", text: "Comment placeholder", profilePic: "👀", daysAgo: 2, likes: 63 },
-      { user: "user3", text: "Comment placeholder", profilePic: "😉", daysAgo: 2, likes: 72 }
-    ]
+    comments: []
   },
   {
     id: 21,
-    videoSrc: "/videos/Flem - Kombucha Apology.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Kombucha Apology.mp4",
-    likes: 534,
-    saves: 198,
+    videoSrc: "/videos/Cole - But what about codpiece.mp4",
+    username: "cole",
+    description: "Codpeice for the win!!!!!!",
+    likes: 598,
+    saves: 216,
     maintainAspectRatio: false,
     comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🍵", daysAgo: 1, likes: 64 },
-      { user: "user2", text: "Comment placeholder", profilePic: "😅", daysAgo: 2, likes: 49 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🙏", daysAgo: 2, likes: 56 }
+      { user: "mel", text: "You are all far too vigurous!", profilePic: "/images/Mel PFP.png", daysAgo: 1, likes: 72 }
     ]
   },
   {
     id: 22,
-    videoSrc: "/videos/Flem - On your mind.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - On your mind.mp4",
-    likes: 567,
-    saves: 208,
+    videoSrc: "/videos/Mel - Tinfoil Skincare.mp4",
+    username: "mel",
+    description: "",
+    likes: 545,
+    saves: 198,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💭", daysAgo: 1, likes: 72 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🧠", daysAgo: 2, likes: 58 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 63 }
-    ]
+    comments: []
   },
   {
     id: 23,
-    videoSrc: "/videos/Flem - OnlyFlems.mp4",
+    videoSrc: "/videos/Flem - Skincare Ad.mp4",
     username: "flem",
-    description: "Description placeholder\nFlem - OnlyFlems.mp4",
-    likes: 645,
-    saves: 234,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "👑", daysAgo: 1, likes: 88 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💎", daysAgo: 2, likes: 71 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 67 }
-    ]
+    description: "",
+    likes: 467,
+    saves: 159,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 24,
-    videoSrc: "/videos/Flem - Sang Cant Read.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Sang Cant Read.mp4",
-    likes: 489,
-    saves: 178,
+    videoSrc: "/videos/Sang - Kombucha.mp4",
+    username: "sang",
+    description: "",
+    likes: 523,
+    saves: 184,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "📖", daysAgo: 1, likes: 56 },
-      { user: "user2", text: "Comment placeholder", profilePic: "😄", daysAgo: 2, likes: 42 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🤷", daysAgo: 2, likes: 51 }
-    ]
+    comments: []
   },
   {
     id: 25,
-    videoSrc: "/videos/Flem - Skincare Ad.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Skincare Ad.mp4",
-    likes: 612,
-    saves: 223,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💅", daysAgo: 1, likes: 79 },
-      { user: "user2", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 62 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💄", daysAgo: 2, likes: 68 }
-    ]
+    videoSrc: "/videos/Cole - Opal Appearance Update.mp4",
+    username: "cole",
+    description: "",
+    likes: 512,
+    saves: 179,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 26,
-    videoSrc: "/videos/Flem - Skincare Routine.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Skincare Routine.mp4",
-    likes: 612,
-    saves: 228,
-    maintainAspectRatio: true,
+    videoSrc: "/videos/Mel - Bile Boys.mp4",
+    username: "mel",
+    description: "",
+    likes: 578,
+    saves: 209,
+    maintainAspectRatio: false,
     comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 1, likes: 95 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💆", daysAgo: 2, likes: 82 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🧴", daysAgo: 2, likes: 77 }
+      { user: "BillyBob", text: "Hi I'm BobBilly, that's totally me in the video and I totally consented to everything you see here.", profilePic: "😅", daysAgo: 2, likes: 34 }
     ]
   },
   {
     id: 27,
-    videoSrc: "/videos/Flem - Skincare Story.mp4",
+    videoSrc: "/videos/Flem - Diagram.mp4",
     username: "flem",
-    description: "Description placeholder\nFlem - Skincare Story.mp4",
-    likes: 556,
-    saves: 204,
+    description: "",
+    likes: 489,
+    saves: 166,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💆", daysAgo: 1, likes: 68 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🧖", daysAgo: 2, likes: 54 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 61 }
-    ]
+    comments: []
   },
   {
     id: 28,
-    videoSrc: "/videos/Flem - So Dry.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - So Dry.mp4",
-    likes: 478,
-    saves: 172,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💧", daysAgo: 1, likes: 54 },
-      { user: "user2", text: "Comment placeholder", profilePic: "😩", daysAgo: 2, likes: 39 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🌵", daysAgo: 2, likes: 45 }
-    ]
+    videoSrc: "/videos/Sang - Vampires.mp4",
+    username: "sang",
+    description: "",
+    likes: 567,
+    saves: 205,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 29,
-    videoSrc: "/videos/Flem - Yoga Bali.mp4",
-    username: "flem",
-    description: "Description placeholder\nFlem - Yoga Bali.mp4",
+    videoSrc: "/videos/Cole - Opal Hanky Panky.mp4",
+    username: "cole",
+    description: "",
     likes: 534,
-    saves: 195,
+    saves: 192,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🧘", daysAgo: 1, likes: 67 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🌴", daysAgo: 2, likes: 52 },
-      { user: "user3", text: "Comment placeholder", profilePic: "☮️", daysAgo: 2, likes: 58 }
-    ]
+    comments: []
   },
   {
     id: 30,
-    videoSrc: "/videos/Mel - AntiWax.mp4",
+    videoSrc: "/videos/Mel - Joe Rogan.mp4",
     username: "mel",
-    description: "Description placeholder\nMel - AntiWax.mp4",
-    likes: 467,
-    saves: 168,
+    description: "",
+    likes: 612,
+    saves: 226,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🕯️", daysAgo: 1, likes: 52 },
-      { user: "user2", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 38 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🚫", daysAgo: 2, likes: 44 }
-    ]
+    comments: []
   },
   {
     id: 31,
-    videoSrc: "/videos/Mel - Autumn ASMR.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Autumn ASMR.mp4",
-    likes: 612,
-    saves: 225,
+    videoSrc: "/videos/Flem - Skincare Story.mp4",
+    username: "flem",
+    description: "",
+    likes: 478,
+    saves: 161,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🍂", daysAgo: 1, likes: 74 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎃", daysAgo: 2, likes: 61 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🌾", daysAgo: 2, likes: 66 }
-    ]
+    comments: []
   },
   {
     id: 32,
-    videoSrc: "/videos/Mel - Bile Boys.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Bile Boys.mp4",
-    likes: 534,
-    saves: 195,
+    videoSrc: "/videos/Sang - Vampire Boyfriend Rave.mp4",
+    username: "sang",
+    description: "",
+    likes: 589,
+    saves: 214,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "😈", daysAgo: 1, likes: 64 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🔥", daysAgo: 2, likes: 49 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💪", daysAgo: 2, likes: 57 }
-    ]
+    comments: []
   },
   {
     id: 33,
-    videoSrc: "/videos/Mel - Bread.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Bread.mp4",
-    likes: 478,
-    saves: 172,
+    videoSrc: "/videos/Cole - Opal Supplements.mp4",
+    username: "cole",
+    description: "",
+    likes: 545,
+    saves: 197,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🍞", daysAgo: 1, likes: 56 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🥐", daysAgo: 2, likes: 41 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🥖", daysAgo: 2, likes: 48 }
-    ]
+    comments: []
   },
   {
     id: 34,
-    videoSrc: "/videos/Mel - Conspiracy Rant.mp4",
+    videoSrc: "/videos/Mel - Squirt.mp4",
     username: "mel",
-    description: "Description placeholder\nMel - Conspiracy Rant.mp4",
-    likes: 645,
-    saves: 234,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "👁️", daysAgo: 1, likes: 81 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🔍", daysAgo: 2, likes: 68 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🤔", daysAgo: 2, likes: 73 }
-    ]
+    description: "",
+    likes: 501,
+    saves: 174,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 35,
-    videoSrc: "/videos/Mel - Eating Tinfoil.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Eating Tinfoil.mp4",
-    likes: 567,
-    saves: 206,
+    videoSrc: "/videos/Flem - So Dry.mp4",
+    username: "flem",
+    description: "",
+    likes: 456,
+    saves: 149,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🥄", daysAgo: 1, likes: 72 },
-      { user: "user2", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 57 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🤪", daysAgo: 2, likes: 64 }
-    ]
+    comments: []
   },
   {
     id: 36,
-    videoSrc: "/videos/Mel - Globalist.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Globalist.mp4",
-    likes: 512,
-    saves: 187,
+    videoSrc: "/videos/Sang - Bloodbounding.mp4",
+    username: "sang",
+    description: "",
+    likes: 534,
+    saves: 193,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🌍", daysAgo: 1, likes: 62 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🌎", daysAgo: 2, likes: 48 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🌏", daysAgo: 2, likes: 55 }
-    ]
+    comments: []
   },
   {
     id: 37,
-    videoSrc: "/videos/Mel - Intervention.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Intervention.mp4",
-    likes: 589,
-    saves: 214,
+    videoSrc: "/videos/Cole - Work of art.mp4",
+    username: "cole",
+    description: "",
+    likes: 578,
+    saves: 208,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🆘", daysAgo: 1, likes: 71 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💬", daysAgo: 2, likes: 56 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🤝", daysAgo: 2, likes: 62 }
-    ]
+    comments: []
   },
   {
     id: 38,
-    videoSrc: "/videos/Mel - Jerry.mp4",
+    videoSrc: "/videos/Mel - Sang Excercize.mp4",
     username: "mel",
-    description: "Description placeholder\nMel - Jerry.mp4",
-    likes: 456,
-    saves: 168,
+    description: "",
+    likes: 512,
+    saves: 181,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🐭", daysAgo: 1, likes: 51 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🧀", daysAgo: 2, likes: 38 },
-      { user: "user3", text: "Comment placeholder", profilePic: "😄", daysAgo: 2, likes: 45 }
-    ]
+    comments: []
   },
   {
     id: 39,
-    videoSrc: "/videos/Mel - Joe Rogan.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Joe Rogan.mp4",
-    likes: 612,
-    saves: 223,
+    videoSrc: "/videos/Flem - Behind the scene.mp4",
+    username: "flem",
+    description: "",
+    likes: 489,
+    saves: 168,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎙️", daysAgo: 1, likes: 79 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎧", daysAgo: 2, likes: 62 },
-      { user: "user3", text: "Comment placeholder", profilePic: "📻", daysAgo: 2, likes: 68 }
-    ]
+    comments: []
   },
   {
     id: 40,
-    videoSrc: "/videos/Mel - Lord Brayn Rumors.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Lord Brayn Rumors.mp4",
-    likes: 534,
-    saves: 195,
+    videoSrc: "/videos/Sang - Implants.mp4",
+    username: "sang",
+    description: "",
+    likes: 545,
+    saves: 199,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "👑", daysAgo: 1, likes: 65 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🗣️", daysAgo: 2, likes: 51 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💬", daysAgo: 2, likes: 58 }
-    ]
+    comments: []
   },
   {
     id: 41,
-    videoSrc: "/videos/Mel - No Dancing.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - No Dancing.mp4",
-    likes: 467,
-    saves: 170,
+    videoSrc: "/videos/Cole - Opal Mel Gift.mp4",
+    username: "cole",
+    description: "",
+    likes: 523,
+    saves: 187,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🚫", daysAgo: 1, likes: 54 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💃", daysAgo: 2, likes: 41 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🕺", daysAgo: 2, likes: 48 }
-    ]
+    comments: []
   },
   {
     id: 42,
-    videoSrc: "/videos/Mel - Sang Excercize.mp4",
+    videoSrc: "/videos/Mel - AntiWax.mp4",
     username: "mel",
-    description: "Description placeholder\nMel - Sang Excercize.mp4",
-    likes: 523,
-    saves: 189,
+    description: "",
+    likes: 467,
+    saves: 155,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💪", daysAgo: 1, likes: 63 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🏃", daysAgo: 2, likes: 49 },
-      { user: "user3", text: "Comment placeholder", profilePic: "⚡", daysAgo: 2, likes: 56 }
-    ]
+    comments: []
   },
   {
     id: 43,
-    videoSrc: "/videos/Mel - Squirt.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Squirt.mp4",
-    likes: 578,
-    saves: 210,
+    videoSrc: "/videos/Flem - Flemdiagram Follow-up.mp4",
+    username: "flem",
+    description: "",
+    likes: 501,
+    saves: 176,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💦", daysAgo: 1, likes: 69 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🌊", daysAgo: 2, likes: 54 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 61 }
-    ]
+    comments: []
   },
   {
     id: 44,
-    videoSrc: "/videos/Mel - Tinfoil Skincare.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Tinfoil Skincare.mp4",
+    videoSrc: "/videos/Sang - OnlyFlems Confrontation-.mp4",
+    username: "sang",
+    description: "",
     likes: 612,
-    saves: 223,
+    saves: 224,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "✨", daysAgo: 1, likes: 78 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💄", daysAgo: 2, likes: 63 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🧴", daysAgo: 2, likes: 69 }
-    ]
+    comments: []
   },
   {
     id: 45,
-    videoSrc: "/videos/Mel - Unboxing ASMR.mp4",
-    username: "mel",
-    description: "Description placeholder\nMel - Unboxing ASMR.mp4",
-    likes: 645,
-    saves: 234,
+    videoSrc: "/videos/Cole - Opal Lifting.mp4",
+    username: "cole",
+    description: "",
+    likes: 534,
+    saves: 194,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "📦", daysAgo: 1, likes: 82 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎁", daysAgo: 2, likes: 67 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 74 }
-    ]
+    comments: []
   },
   {
     id: 46,
-    videoSrc: "/videos/Mel - Wonder Tour.mp4",
+    videoSrc: "/videos/Mel - Lord Brayn Rumors.mp4",
     username: "mel",
-    description: "Description placeholder\nMel - Wonder Tour.mp4",
-    likes: 567,
-    saves: 206,
+    description: "",
+    likes: 578,
+    saves: 212,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎢", daysAgo: 1, likes: 73 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎪", daysAgo: 2, likes: 58 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🎡", daysAgo: 2, likes: 65 }
-    ]
+    comments: []
   },
   {
     id: 47,
-    videoSrc: "/videos/Sang - All You Need is Blood.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - All You Need is Blood.mp4",
-    likes: 589,
-    saves: 216,
-    maintainAspectRatio: true,
-    hideFromMobile: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🩸", daysAgo: 1, likes: 73 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💋", daysAgo: 2, likes: 59 },
-      { user: "user3", text: "Comment placeholder", profilePic: "❤️", daysAgo: 2, likes: 64 }
-    ]
+    videoSrc: "/videos/Flem - Sang Cant Read.mp4",
+    username: "flem",
+    description: "",
+    likes: 489,
+    saves: 164,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 48,
-    videoSrc: "/videos/Sang - Baby  Blood Blush.mp4",
+    videoSrc: "/videos/Sang - Doe Eyes.mp4",
     username: "sang",
-    description: "Description placeholder\nSang - Baby  Blood Blush.mp4",
-    likes: 589,
-    saves: 214,
+    description: "",
+    likes: 556,
+    saves: 206,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "👶", daysAgo: 1, likes: 71 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💋", daysAgo: 2, likes: 56 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💄", daysAgo: 2, likes: 63 }
-    ]
+    comments: []
   },
   {
     id: 49,
-    videoSrc: "/videos/Sang - Bloodbounding.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Bloodbounding.mp4",
-    likes: 512,
-    saves: 187,
+    videoSrc: "/videos/Cole - Fast Leeches.mp4",
+    username: "cole",
+    description: "",
+    likes: 523,
+    saves: 191,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🩸", daysAgo: 1, likes: 61 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💪", daysAgo: 2, likes: 47 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🔗", daysAgo: 2, likes: 54 }
-    ]
+    comments: []
   },
   {
     id: 50,
-    videoSrc: "/videos/Sang - Doe Eyes.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Doe Eyes.mp4",
-    likes: 534,
-    saves: 195,
+    videoSrc: "/videos/Mel - Wonder Tour v2.mp4",
+    username: "mel",
+    description: "",
+    likes: 589,
+    saves: 218,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "👁️", daysAgo: 1, likes: 67 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🦌", daysAgo: 2, likes: 52 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 59 }
-    ]
+    comments: []
   },
   {
     id: 51,
-    videoSrc: "/videos/Sang - Getting Ready Sang.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Getting Ready Sang.mp4",
-    likes: 612,
-    saves: 223,
+    videoSrc: "/videos/Flem - OnlyFlems.mp4",
+    username: "flem",
+    description: "",
+    likes: 512,
+    saves: 180,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💄", daysAgo: 1, likes: 78 },
-      { user: "user2", text: "Comment placeholder", profilePic: "👗", daysAgo: 2, likes: 62 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 69 }
-    ]
+    comments: []
   },
   {
     id: 52,
-    videoSrc: "/videos/Sang - Implants.mp4",
+    videoSrc: "/videos/Sang - Raver Girl Bath Blood.mp4",
     username: "sang",
-    description: "Description placeholder\nSang - Implants.mp4",
-    likes: 467,
-    saves: 171,
+    description: "",
+    likes: 567,
+    saves: 207,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💎", daysAgo: 1, likes: 56 },
-      { user: "user2", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 42 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💪", daysAgo: 2, likes: 49 }
-    ]
+    comments: []
   },
   {
     id: 53,
-    videoSrc: "/videos/Sang - Joust.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Joust.mp4",
-    likes: 523,
-    saves: 189,
-    maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🏹", daysAgo: 1, likes: 63 },
-      { user: "user2", text: "Comment placeholder", profilePic: "⚔️", daysAgo: 2, likes: 49 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🛡️", daysAgo: 2, likes: 56 }
-    ]
-  },
-  {
-    id: 54,
-    videoSrc: "/videos/Sang - Kombucha.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Kombucha.mp4",
-    likes: 578,
-    saves: 210,
-    maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🍵", daysAgo: 1, likes: 70 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🥤", daysAgo: 2, likes: 55 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 62 }
-    ]
-  },
-  {
-    id: 55,
-    videoSrc: "/videos/Sang - Love Blood.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Love Blood.mp4",
+    videoSrc: "/videos/Cole - Just the Tip.mp4",
+    username: "cole",
+    description: "",
     likes: 612,
     saves: 223,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "❤️", daysAgo: 1, likes: 79 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🩸", daysAgo: 2, likes: 64 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💋", daysAgo: 2, likes: 71 }
-    ]
+    comments: []
+  },
+  {
+    id: 54,
+    videoSrc: "/videos/Mel - Bath Breakdown.mp4",
+    username: "mel",
+    description: "",
+    likes: 501,
+    saves: 172,
+    maintainAspectRatio: false,
+    comments: []
+  },
+  {
+    id: 55,
+    videoSrc: "/videos/Flem - Skincare Routine.mp4",
+    username: "flem",
+    description: "",
+    likes: 478,
+    saves: 162,
+    maintainAspectRatio: false,
+    comments: []
   },
   {
     id: 56,
-    videoSrc: "/videos/Sang - OnlyFlems Confrontation-.mp4",
+    videoSrc: "/videos/Sang - All You Need is Blood.mp4",
     username: "sang",
-    description: "Description placeholder\nSang - OnlyFlems Confrontation-.mp4",
-    likes: 645,
-    saves: 234,
+    description: "",
+    likes: 545,
+    saves: 200,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "😠", daysAgo: 1, likes: 82 },
-      { user: "user2", text: "Comment placeholder", profilePic: "💬", daysAgo: 2, likes: 68 },
-      { user: "user3", text: "Comment placeholder", profilePic: "⚡", daysAgo: 2, likes: 75 }
-    ]
+    comments: []
   },
   {
     id: 57,
-    videoSrc: "/videos/Sang - Rave.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Rave.mp4",
-    likes: 534,
-    saves: 195,
+    videoSrc: "/videos/Cole - Circus.mp4",
+    username: "cole",
+    description: "Health is wealth!! #skills",
+    likes: 598,
+    saves: 220,
     maintainAspectRatio: false,
     comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎉", daysAgo: 1, likes: 66 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🎊", daysAgo: 2, likes: 52 },
-      { user: "user3", text: "Comment placeholder", profilePic: "💃", daysAgo: 2, likes: 59 }
+      { user: "mel", text: "You fell for the conspiracy of excerize yet again!", profilePic: "/images/Mel PFP.png", daysAgo: 1, likes: 56 },
+      { user: "cole", text: "Dont underestimate my waggle!", profilePic: "/images/Cole PFP.png", daysAgo: 1, likes: 78 },
+      { user: "mel", text: "Its all codpeice", profilePic: "/images/Mel PFP.png", daysAgo: 2, likes: 42 }
     ]
   },
   {
     id: 58,
-    videoSrc: "/videos/Sang - Rave2.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Rave2.mp4",
-    likes: 567,
-    saves: 206,
+    videoSrc: "/videos/Mel - Unboxing ASMR.mp4",
+    username: "mel",
+    description: "",
+    likes: 534,
+    saves: 188,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🎊", daysAgo: 1, likes: 72 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🕺", daysAgo: 2, likes: 57 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🎵", daysAgo: 2, likes: 64 }
-    ]
+    comments: []
   },
   {
     id: 59,
-    videoSrc: "/videos/Sang - Raver Girl Bath Blood.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Raver Girl Bath Blood.mp4",
-    likes: 589,
-    saves: 214,
+    videoSrc: "/videos/Flem - Handkerchief.mp4",
+    username: "flem",
+    description: "",
+    likes: 456,
+    saves: 151,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "👗", daysAgo: 1, likes: 74 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🩸", daysAgo: 2, likes: 59 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 66 }
-    ]
+    comments: []
   },
   {
     id: 60,
-    videoSrc: "/videos/Sang - Scrapbook.mp4",
+    videoSrc: "/videos/Sang Spills the Tea.mp4",
     username: "sang",
-    description: "Description placeholder\nSang - Scrapbook.mp4",
-    likes: 512,
-    saves: 187,
-    maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "📸", daysAgo: 1, likes: 62 },
-      { user: "user2", text: "Comment placeholder", profilePic: "📷", daysAgo: 2, likes: 48 },
-      { user: "user3", text: "Comment placeholder", profilePic: "✨", daysAgo: 2, likes: 55 }
-    ]
-  },
-  {
-    id: 61,
-    videoSrc: "/videos/Sang - Vampires.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Vampires.mp4",
-    likes: 645,
-    saves: 234,
-    maintainAspectRatio: true,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "🧛", daysAgo: 1, likes: 83 },
-      { user: "user2", text: "Comment placeholder", profilePic: "🩸", daysAgo: 2, likes: 68 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🌙", daysAgo: 2, likes: 76 }
-    ]
-  },
-  {
-    id: 62,
-    videoSrc: "/videos/Sang - Workout Vlog Argument.mp4",
-    username: "sang",
-    description: "Description placeholder\nSang - Workout Vlog Argument.mp4",
+    description: "",
     likes: 578,
     saves: 210,
     maintainAspectRatio: false,
-    comments: [
-      { user: "user1", text: "Comment placeholder", profilePic: "💪", daysAgo: 1, likes: 71 },
-      { user: "user2", text: "Comment placeholder", profilePic: "😠", daysAgo: 2, likes: 56 },
-      { user: "user3", text: "Comment placeholder", profilePic: "🏋️", daysAgo: 2, likes: 63 }
-    ]
+    comments: []
+  },
+  {
+    id: 61,
+    videoSrc: "/videos/Cole - Protein Powder Edit.mp4",
+    username: "cole",
+    description: "",
+    likes: 523,
+    saves: 190,
+    maintainAspectRatio: false,
+    comments: []
+  },
+  {
+    id: 62,
+    videoSrc: "/videos/Mel - Eating Tinfoil.mp4",
+    username: "mel",
+    description: "",
+    likes: 489,
+    saves: 169,
+    maintainAspectRatio: false,
+    comments: []
+  },
+  {
+    id: 63,
+    videoSrc: "/videos/Flem - Kombucha Apology.mp4",
+    username: "flem",
+    description: "",
+    likes: 501,
+    saves: 177,
+    maintainAspectRatio: false,
+    comments: []
   }
 ];

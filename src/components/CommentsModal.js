@@ -43,8 +43,12 @@ const CommentsModal = ({ video, onClose }) => {
         >
           {video.comments.map((comment, index) => (
             <div key={index} className="flex items-start space-x-3 mb-4">
-              <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-xs">{comment.profilePic || '👤'}</span>
+              <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden flex-shrink-0">
+                {comment.profilePic && comment.profilePic.startsWith('/') ? (
+                  <img src={comment.profilePic} alt={comment.user} className="w-8 h-8 object-cover" />
+                ) : (
+                  <span className="text-sm">{comment.profilePic || '👤'}</span>
+                )}
               </div>
               <div className="flex-1">
                 <div className="flex items-center space-x-2">
