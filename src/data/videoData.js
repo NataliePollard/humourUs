@@ -28,7 +28,7 @@ export const originalVideos = [
     description: "",
     likes: 489,
     saves: 167,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: []
   },
   {
@@ -108,7 +108,7 @@ export const originalVideos = [
     description: "",
     likes: 468,
     saves: 158,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: []
   },
   {
@@ -285,7 +285,7 @@ export const originalVideos = [
     description: "",
     likes: 567,
     saves: 205,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: []
   },
   {
@@ -355,7 +355,7 @@ export const originalVideos = [
     description: "",
     likes: 456,
     saves: 149,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     comments: []
   },
   {
