@@ -3,10 +3,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import TikTokApp from './TikTokApp';
 import SplashScreen from './components/SplashScreen';
 import StandaloneMenu from './components/StandaloneMenu';
+import PasswordScreen from './components/PasswordScreen';
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
   const [isStandalone, setIsStandalone] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    // Always require password on page load
+    sessionStorage.removeItem('isAuthenticated');
+    return false;
+  });
 
   useEffect(() => {
     // Check if app is running in standalone mode on iPad
@@ -14,6 +20,11 @@ const App = () => {
     const isIPad = /iPad|Mac/.test(navigator.userAgent) && !window.MSStream;
     setIsStandalone(standalone && isIPad);
   }, []);
+
+  // Force password screen to be shown before any content
+  if (!isAuthenticated) {
+    return <PasswordScreen onAuthenticated={() => setIsAuthenticated(true)} />;
+  }
 
   const handleSplashComplete = () => {
     setShowSplash(false);
