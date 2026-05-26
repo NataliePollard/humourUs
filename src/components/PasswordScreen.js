@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { CORRECT_PASSWORD, PASSWORD_HINT } from '../constants/authConstants';
+import { CORRECT_PASSWORD } from '../constants/authConstants';
 
 const PasswordScreen = ({ onAuthenticated }) => {
   const [password, setPassword] = useState('');
@@ -54,10 +54,6 @@ const PasswordScreen = ({ onAuthenticated }) => {
               autoFocus
             />
           </div>
-
-          <p className="text-gray-400 text-sm text-center mb-6">
-            {PASSWORD_HINT}
-          </p>
 
           {error && (
             <p className="text-red-500 text-sm text-center mb-4">
